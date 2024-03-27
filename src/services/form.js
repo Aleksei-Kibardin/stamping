@@ -1,4 +1,4 @@
-export const submitForm = async (formSubmitted, message) => {
+export const submitForm = async (formData, formSubmitted, message) => {
   try {
     const response = await fetch("/mail.php", {
       method: "POST",

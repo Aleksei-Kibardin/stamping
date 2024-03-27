@@ -61,30 +61,36 @@ const formData = reactive({
 </script>
 
 <style scoped lang="scss">
+@import "../fluid.sass";
 * {
   font-family: inherit;
   color: #000;
 }
 .form__container {
-  width: 35%;
+  height: 100%;
+}
+
+.obratnuj-zvonok {
+  position: absolute;
   bottom: 0px;
   right: 0px;
-  position: fixed;
-}
-.obratnuj-zvonok {
-  padding: 20px;
+  width: 100%;
+  height: 100%;
+  @include fluid("padding", 20);
+  @include fluid("gap", 10);
   display: flex;
   align-items: start;
   flex-direction: column;
-  gap: 10px;
   background: #fff;
+}
+
+.form-zvonok {
+  width: 80%;
 }
 
 .form__group {
   position: relative;
-  padding: 15px 0 0;
-  margin-top: 10px;
-  width: 200%;
+  @include fluid("margin-top", 10);
 }
 
 .form__field {
@@ -105,13 +111,13 @@ const formData = reactive({
   &:placeholder-shown ~ .form__label {
     font-size: 1rem;
     cursor: text;
-    top: 20px;
+    @include fluid("top", 20);
   }
 }
 
 .form__label {
   position: absolute;
-  top: 0;
+  @include fluid("top", -6);
   display: block;
   transition: 0.2s;
   color: rgb(0, 0, 0);
@@ -120,15 +126,15 @@ const formData = reactive({
 .form__field:focus {
   ~ .form__label {
     position: absolute;
-    top: 0;
+    @include fluid("top", -6);
     display: block;
     transition: 0.2s;
-    font-size: 1rem;
+    font-size: 0.9rem;
     font-weight: 700;
   }
-  padding-bottom: 6px;
+ 
+  @include fluid("border-width", 3);
   font-weight: 700;
-  border-width: 3px;
   border-image-slice: 1;
 }
 .bot-send-mail {
@@ -139,8 +145,8 @@ const formData = reactive({
   color: #fff;
   padding: 10px 20px;
   text-transform: uppercase;
-  margin-top: 10px;
-  border-radius: 2px;
+  @include fluid("margin-top", 10);
+  @include fluid("border-radius", 2);
   cursor: pointer;
   position: relative;
 }

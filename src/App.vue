@@ -9,11 +9,13 @@
             v-for="(t, i) in anchorList"
             :key="t"
             @click="currentSection = i"
-          >{{ t.name }}</div>
+          >
+            {{ t.name }}
+          </div>
         </div>
         <div class="nav__contact">
           <span>88005553535</span>
-          <span class="yellow-txt">ЗАКАЗАТЬ ЗВОНОК</span>
+          <span @click="formActive = !formActive" class="yellow-txt">ЗАКАЗАТЬ ЗВОНОК</span>
         </div>
       </div>
     </nav>
@@ -26,12 +28,12 @@
         @click="currentSection = i"
       ></div>
     </div>
-    <main id="pagepiling">
+    <main id="pagepiling" @click="formActive = false">
       <div class="section" data-anchor="0">
         <homeSlide></homeSlide>
       </div>
       <div class="section" data-anchor="1">
-        <homeSlide></homeSlide>
+        <aboutSlide></aboutSlide>
       </div>
       <div class="section" data-anchor="2">
         <homeSlide></homeSlide>
@@ -43,7 +45,10 @@
         <homeSlide></homeSlide>
       </div>
     </main>
-    <fixedForm></fixedForm>
+
+    <div class="fixed-form" :class="{ show: formActive }">
+      <fixedForm></fixedForm>
+    </div>
   </div>
 </template>
 
@@ -51,10 +56,12 @@
 import { ref, onMounted, watch } from "vue";
 import homeSlide from "./components/homeSlide.vue";
 import fixedForm from "./components/fixedForm.vue";
+import aboutSlide from "./components/aboutSlide.vue";
 
 let lastScrollTime = 0;
 const delay = 350;
-let currentSection = ref(0);
+const currentSection = ref(0);
+const formActive = ref(true);
 
 const anchorList = ref([
   {
@@ -76,9 +83,9 @@ const anchorList = ref([
 
 const scrollByEvent = (event) => {
   if (event > 0 && currentSection.value < 4) {
-    currentSection.value++
+    currentSection.value++;
   } else if (event < 0 && currentSection.value > 0) {
-    currentSection.value--
+    currentSection.value--;
   }
 };
 
@@ -141,6 +148,7 @@ nav {
   position: fixed;
   display: flex;
   align-items: center;
+  @include fluid("font-size", 20);
   justify-content: center;
   top: 0px;
   left: 0px;
@@ -149,7 +157,7 @@ nav {
   @include fluid("height", 100);
 }
 .head__nav {
-  padding: 10px;
+  @include fluid("padding", 10);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -172,22 +180,27 @@ nav {
 }
 .nav__contact {
   span {
-    margin-right: 20px;
+    @include fluid("margin-right", 20);
   }
 }
 .dot-right {
   position: fixed;
   display: flex;
   flex-direction: column;
-  right: 50px;
-  top: 200px;
-  gap: 30px;
+  @include fluid("right", 50);
+  @include fluid("top", 200);
+  @include fluid("gap", 30);
   z-index: 99999;
+}
+.logo {
+  img {
+    @include fluid("height", 50);
+  }
 }
 .dot {
   cursor: pointer;
-  width: 10px;
-  height: 10px;
+  @include fluid("width", 10);
+  @include fluid("height", 10);
   border-radius: 100%;
   background-color: rgba(255, 255, 255, 0.3);
   transition: all 1s ease 0s;
@@ -199,8 +212,23 @@ nav {
 main {
   scroll-behavior: smooth;
 }
+
 .section {
   position: relative;
   height: 100vh;
+}
+.fixed-form {
+  @include fluid("height", 300);
+  z-index: 100;
+  width: 0px;
+  bottom: 0px;
+  right: 0px;
+  opacity: 0;
+  position: fixed;
+  transition: all 1s ease 0s;
+}
+.fixed-form.show {
+  @include fluid("width", 500);
+  opacity: 1;
 }
 </style>
