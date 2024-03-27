@@ -43,15 +43,17 @@
         <homeSlide></homeSlide>
       </div>
     </main>
+    <fixedForm></fixedForm>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, watch } from "vue";
 import homeSlide from "./components/homeSlide.vue";
+import fixedForm from "./components/fixedForm.vue";
 
 let lastScrollTime = 0;
-const delay = 200;
+const delay = 350;
 let currentSection = ref(0);
 
 const anchorList = ref([
@@ -73,10 +75,10 @@ const anchorList = ref([
 ]);
 
 const scrollByEvent = (event) => {
-  if (event > 0) {
-    currentSection.value = (currentSection.value + 1) % 5;
-  } else if (event < 0) {
-    currentSection.value = (currentSection.value - 1 + 5) % 5;
+  if (event > 0 && currentSection.value < 4) {
+    currentSection.value++
+  } else if (event < 0 && currentSection.value > 0) {
+    currentSection.value--
   }
 };
 
@@ -178,7 +180,7 @@ nav {
   display: flex;
   flex-direction: column;
   right: 50px;
-  top: 300px;
+  top: 200px;
   gap: 30px;
   z-index: 99999;
 }
