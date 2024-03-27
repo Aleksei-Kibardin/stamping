@@ -17,6 +17,7 @@
     width: 100vw;
     z-index: -1;
     object-fit: cover;
+    filter: brightness(70%);
 }
 .viedo__title {
   color: #ffd400;

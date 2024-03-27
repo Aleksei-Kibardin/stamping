@@ -21,11 +21,14 @@
         class="dot"
         v-for="(t, i) in dotList"
         :key="t"
-        :class="{ active: currentSlide === i }"
-        @click="currentSlide = i"
+        :class="{ active: currentSection === i }"
+        @click="currentSection = i"
       ></div>
     </div>
-    <main>
+    <main id="pagepiling">
+      <div class="section" data-anchor="0">
+        <homeSlide></homeSlide>
+      </div>
       <div class="section" data-anchor="1">
         <homeSlide></homeSlide>
       </div>
@@ -35,13 +38,7 @@
       <div class="section" data-anchor="3">
         <homeSlide></homeSlide>
       </div>
-      <div
-        class="section"
-        data-anchor="4"
-      >
-        <homeSlide></homeSlide>
-      </div>
-      <div id="is" class="section" data-anchor="5">
+      <div class="section" data-anchor="4">
         <homeSlide></homeSlide>
       </div>
     </main>
@@ -49,10 +46,12 @@
 </template>
 
 <script setup>
-import { ref, onMounted } from "vue";
+import { ref, onMounted, watch } from "vue";
 import homeSlide from "./components/homeSlide.vue";
 
-let i = false;
+let lastScrollTime = 0;
+const delay = 200;
+let currentSection = ref(0);
 
 const dotList = ref([
   {
@@ -71,37 +70,61 @@ const dotList = ref([
     name: "txt5",
   },
 ]);
-const currentSlide = ref(0);
 
-const scrollToSection = () => {
-  const section = document.querySelector(`[data-anchor="1"]`);
-  console.log(section);
+const scrollByEvent = (event) => {
+  if (event > 0) {
+    currentSection.value = (currentSection.value + 1) % 5;
+  } else if (event < 0) {
+    currentSection.value = (currentSection.value - 1 + 5) % 5;
+  }
 };
-onMounted(() => {
-  let currentSection = 1;
-  window.addEventListener("wheel", (event) => {
-    // Обработка прокрутки вниз
-    console.log(currentSection);
-    if (event.deltaY > 0) {
-      currentSection++;
-      console.log("++");
-    }
-    // Обработка прокрутки вверх
-    else if (event.deltaY < 0) {
-      currentSection--;
-      console.log("--");
-    }
 
-    // Прокручиваем к текущей секции
-    const currentSectionElement = document.querySelector(
-      `[data-anchor="${currentSection}"]`
-    );
-    if (currentSectionElement) {
-      currentSectionElement.scrollIntoView({
-        behavior: "smooth",
-      });
+watch(currentSection, () => {
+  const currentSectionElement = document.querySelector(
+    `[data-anchor="${currentSection.value}"]`
+  );
+  if (currentSectionElement) {
+    currentSectionElement.scrollIntoView({
+      behavior: "smooth",
+    });
+  }
+});
+
+onMounted(() => {
+  let startY;
+  window.addEventListener("wheel", (event) => {
+    const currentTime = new Date().getTime();
+    if (currentTime - lastScrollTime >= delay) {
+      scrollByEvent(event.deltaY); // проверяем сколько прошло время между предыдущим событием чтобы ограничить частоту событий
+      lastScrollTime = currentTime;
     }
   });
+
+  window.addEventListener("keydown", function (event) {
+    // обрабатываем нажатие стрелок
+    event.key === "ArrowUp"
+      ? scrollByEvent(-1)
+      : event.key === "ArrowDown" && scrollByEvent(1);
+  });
+
+  window.addEventListener(
+    "touchstart",
+    function (event) {
+      // Получаем начальные координаты касания
+      startY = event.touches[0].clientY;
+    },
+    false
+  );
+  window.addEventListener(
+    "touchend",
+    function (event) {
+      let endY = event.changedTouches[0].clientY; // Получаем координаты окончания касания
+      let deltaY = endY - startY; // Рассчитываем разницу между начальной и конечной координатами
+
+      scrollByEvent(deltaY > 0 ? -1 : 1);
+    },
+    false
+  );
 });
 </script>
 
@@ -122,19 +145,20 @@ nav {
   @include fluid("height", 100);
 }
 .head__nav {
-  padding: 5px;
+  padding: 10px;
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #3d3d3d;
+  border-bottom: 1px solid #ffffff;
   @include fluid("width", 1564);
+  height: 100%;
 }
 .nav-border__container {
   display: flex;
-  gap: 40px;
+  @include fluid("gap", 40);
 }
 .anchor {
-  font-size: 18px;
+  @include fluid("font-size", 18);
 }
 .yellow-txt {
   font-weight: bold;
@@ -152,6 +176,7 @@ nav {
   right: 50px;
   top: 300px;
   gap: 30px;
+  z-index: 99999;
 }
 .dot {
   width: 10px;
@@ -168,6 +193,7 @@ main {
   scroll-behavior: smooth;
 }
 .section {
+  position: relative;
   height: 100vh;
 }
 </style>
