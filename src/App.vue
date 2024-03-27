@@ -4,11 +4,12 @@
       <div class="head__nav">
         <div class="logo"><img src="./assets/logo.svg" alt="logo" /></div>
         <div class="nav-border__container">
-          <div class="anchor">текст1</div>
-          <div class="anchor">текст2</div>
-          <div class="anchor">текст3</div>
-          <div class="anchor">текст4</div>
-          <div class="anchor">текст5</div>
+          <div
+            class="anchor"
+            v-for="(t, i) in anchorList"
+            :key="t"
+            @click="currentSection = i"
+          >{{ t.name }}</div>
         </div>
         <div class="nav__contact">
           <span>88005553535</span>
@@ -19,7 +20,7 @@
     <div class="dot-right">
       <div
         class="dot"
-        v-for="(t, i) in dotList"
+        v-for="(t, i) in anchorList"
         :key="t"
         :class="{ active: currentSection === i }"
         @click="currentSection = i"
@@ -53,7 +54,7 @@ let lastScrollTime = 0;
 const delay = 200;
 let currentSection = ref(0);
 
-const dotList = ref([
+const anchorList = ref([
   {
     name: "txt1",
   },
@@ -135,12 +136,13 @@ onMounted(() => {
   color: #fff;
 }
 nav {
+  position: fixed;
   display: flex;
   align-items: center;
   justify-content: center;
   top: 0px;
   left: 0px;
-  position: fixed;
+  z-index: 9999;
   width: 100vw;
   @include fluid("height", 100);
 }
@@ -158,9 +160,11 @@ nav {
   @include fluid("gap", 40);
 }
 .anchor {
+  cursor: pointer;
   @include fluid("font-size", 18);
 }
 .yellow-txt {
+  cursor: pointer;
   font-weight: bold;
   color: #ffd400;
 }
@@ -179,6 +183,7 @@ nav {
   z-index: 99999;
 }
 .dot {
+  cursor: pointer;
   width: 10px;
   height: 10px;
   border-radius: 100%;
