@@ -36,7 +36,7 @@
         <aboutSlide></aboutSlide>
       </div>
       <div class="section" data-anchor="2">
-        <homeSlide></homeSlide>
+        <gallerySlide></gallerySlide>
       </div>
       <div class="section" data-anchor="3">
         <homeSlide></homeSlide>
@@ -57,6 +57,7 @@ import { ref, onMounted, watch } from "vue";
 import homeSlide from "./components/homeSlide.vue";
 import fixedForm from "./components/fixedForm.vue";
 import aboutSlide from "./components/aboutSlide.vue";
+import gallerySlide from "./components/gallerySlide.vue";
 
 let lastScrollTime = 0;
 const delay = 350;
