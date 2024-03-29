@@ -36,13 +36,13 @@
         <aboutSlide></aboutSlide>
       </div>
       <div class="section" data-anchor="2">
-        <gallerySlide></gallerySlide>
+        <stampingSlide></stampingSlide>
       </div>
       <div class="section" data-anchor="3">
-        <homeSlide></homeSlide>
+        <gallerySlide></gallerySlide>
       </div>
       <div class="section" data-anchor="4">
-        <homeSlide></homeSlide>
+        <footerSlide></footerSlide>
       </div>
     </main>
 
@@ -58,6 +58,8 @@ import homeSlide from "./components/homeSlide.vue";
 import fixedForm from "./components/fixedForm.vue";
 import aboutSlide from "./components/aboutSlide.vue";
 import gallerySlide from "./components/gallerySlide.vue";
+import stampingSlide from "./components/stampingSlide.vue";
+import footerSlide from "./components/footerSlide.vue";
 
 let lastScrollTime = 0;
 const delay = 350;

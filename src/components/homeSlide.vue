@@ -18,6 +18,7 @@
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
+  filter: brightness(70%);
 }
 .video {
   position: relative;
