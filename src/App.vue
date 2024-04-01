@@ -15,7 +15,9 @@
         </div>
         <div class="nav__contact">
           <span>88005553535</span>
-          <span @click="formActive = !formActive" class="yellow-txt">ЗАКАЗАТЬ ЗВОНОК</span>
+          <span @click="formActive = !formActive" class="yellow-txt"
+            >ЗАКАЗАТЬ ЗВОНОК</span
+          >
         </div>
       </div>
     </nav>
@@ -42,6 +44,9 @@
         <gallerySlide></gallerySlide>
       </div>
       <div class="section" data-anchor="4">
+        <clientsSlide></clientsSlide>
+      </div>
+      <div class="section" data-anchor="5">
         <footerSlide></footerSlide>
       </div>
     </main>
@@ -60,6 +65,7 @@ import aboutSlide from "./components/aboutSlide.vue";
 import gallerySlide from "./components/gallerySlide.vue";
 import stampingSlide from "./components/stampingSlide.vue";
 import footerSlide from "./components/footerSlide.vue";
+import clientsSlide from "./components/clientsSlide.vue";
 
 let lastScrollTime = 0;
 const delay = 350;
@@ -85,7 +91,7 @@ const anchorList = ref([
 ]);
 
 const scrollByEvent = (event) => {
-  if (event > 0 && currentSection.value < 4) {
+  if (event > 0 && currentSection.value < 5) {
     currentSection.value++;
   } else if (event < 0 && currentSection.value > 0) {
     currentSection.value--;
@@ -104,7 +110,9 @@ watch(currentSection, () => {
 });
 
 onMounted(() => {
+  let allowScroll;
   let startY;
+  let startX;
   window.addEventListener("wheel", (event) => {
     const currentTime = new Date().getTime();
     if (currentTime - lastScrollTime >= delay) {
@@ -123,8 +131,8 @@ onMounted(() => {
   window.addEventListener(
     "touchstart",
     function (event) {
-      // Получаем начальные координаты касания
       startY = event.touches[0].clientY;
+      startX = event.touches[0].clientX;
     },
     false
   );
@@ -133,8 +141,17 @@ onMounted(() => {
     function (event) {
       let endY = event.changedTouches[0].clientY; // Получаем координаты окончания касания
       let deltaY = endY - startY; // Рассчитываем разницу между начальной и конечной координатами
+      // Рассчитываем абсолютное значение разницы, чтобы определить наибольшее движение
+      const absDeltaY = Math.abs(deltaY);
 
-      scrollByEvent(deltaY > 0 ? -1 : 1);
+      // Если разница больше по Y, чем по X, разрешаем скролл, иначе запрещаем
+      allowScroll =
+        absDeltaY > Math.abs(event.changedTouches[0].clientX - startX);
+
+      // Если разница по Y больше 30 пикселей вверх или вниз, вызываем функцию для прокрутки
+      if (allowScroll) {
+        scrollByEvent(deltaY > 0 ? -1 : 1);
+      }
     },
     false
   );

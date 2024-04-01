@@ -1,71 +1,21 @@
 <template>
-  <div class="swiper__container">
-    <div @click="(show = true), console.log(show)">Открыть Галерею</div>
-    <swiper
-      class="swip"
-      :class="{ show: show }"
-      :modules="modules"
-      :slides-per-view="1"
-      navigation
-      :pagination="{ clickable: true }"
-      :scrollbar="{ draggable: true }"
-    >
-      <swiper-slide
-        ><img
-          class="img"
-          src="https://tltartel.ru/wp-content/uploads/2022/03/chto-takoe-shtampovka-metalla-osobennosti-preimushhestva-i-harakteristiki-protsessa-1024x683.jpg"
-          alt=""
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          class="img"
-          src="https://tltartel.ru/wp-content/uploads/2022/03/chto-takoe-shtampovka-metalla-osobennosti-preimushhestva-i-harakteristiki-protsessa-1024x683.jpg"
-          alt=""
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          class="img"
-          src="https://tltartel.ru/wp-content/uploads/2022/03/chto-takoe-shtampovka-metalla-osobennosti-preimushhestva-i-harakteristiki-protsessa-1024x683.jpg"
-          alt=""
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          class="img"
-          src="https://tltartel.ru/wp-content/uploads/2022/03/chto-takoe-shtampovka-metalla-osobennosti-preimushhestva-i-harakteristiki-protsessa-1024x683.jpg"
-          alt=""
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          class="img"
-          src="https://tltartel.ru/wp-content/uploads/2022/03/chto-takoe-shtampovka-metalla-osobennosti-preimushhestva-i-harakteristiki-protsessa-1024x683.jpg"
-          alt=""
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          class="img"
-          src="https://tltartel.ru/wp-content/uploads/2022/03/chto-takoe-shtampovka-metalla-osobennosti-preimushhestva-i-harakteristiki-protsessa-1024x683.jpg"
-          alt=""
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          class="img"
-          src="https://tltartel.ru/wp-content/uploads/2022/03/chto-takoe-shtampovka-metalla-osobennosti-preimushhestva-i-harakteristiki-protsessa-1024x683.jpg"
-          alt=""
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          class="img"
-          src="https://tltartel.ru/wp-content/uploads/2022/03/chto-takoe-shtampovka-metalla-osobennosti-preimushhestva-i-harakteristiki-protsessa-1024x683.jpg"
-          alt=""
-      /></swiper-slide>
-      <swiper-slide
-        ><img
-          class="img"
-          src="https://tltartel.ru/wp-content/uploads/2022/03/chto-takoe-shtampovka-metalla-osobennosti-preimushhestva-i-harakteristiki-protsessa-1024x683.jpg"
-          alt=""
-      /></swiper-slide>
-    </swiper>
-  </div>
+  <swiper
+    :modules="modules"
+    :slides-per-view="1"
+    navigation
+    :pagination="{ clickable: true }"
+    :scrollbar="{ draggable: true }"
+  >
+    <swiper-slide>
+      <div class="swiper__container">
+        <div class="finger"></div>
+        <div><h1>Делаем не только качественно, но и красиво</h1></div>
+      </div>
+    </swiper-slide>
+    <swiper-slide class="swiper__img" v-for="index in 16" :key="index"
+      ><img class="img" :src="`/img/${index}.png`" alt=""
+    /></swiper-slide>
+  </swiper>
 </template>
 
 <script setup>
@@ -76,34 +26,34 @@ import "swiper/css";
 import "swiper/css/navigation";
 import "swiper/css/pagination";
 import "swiper/css/scrollbar";
-import { ref } from "vue";
 
 const modules = [Navigation, Pagination, Scrollbar, A11y];
-const show = ref(false);
 </script>
 
-<style>
-.swip {
-  height: 0vh;
-  transition: all 1s ease 0s;
-}
-.show {
-  height: 100vh;
+<style lang="scss" scoped>
+@import "../fluid.sass";
+img {
+  pointer-events: none;
 }
 .swiper__container {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  height: 100%;
+  height: 100vh;
+  width: 100vw;
   background-color: #fec401;
+}
+.finger {
+  position: absolute;
   background-image: url(https://alvarotrigo.com/fullPage/imgs/touch-responsive.jpg);
+  align-self: flex-start;
+  transform: rotate(90deg);
   background-position: 50% 100%;
   background-repeat: no-repeat;
-}
-.img {
-  width: 100vw;
-  height: 100vh;
+  z-index: 10;
+  height: 500px;
+  width: 500px;
 }
 .swiper-button-next {
   color: #ffae00;
@@ -115,5 +65,17 @@ const show = ref(false);
 }
 .swiper-pagination-bullet {
   background: #ffae00;
+}
+.swiper__img {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100vw;
+  height: 100vh;
+  background-color: #fec401;
+  img{
+    max-width: 800px;
+    max-height: 800px;
+  }
 }
 </style>

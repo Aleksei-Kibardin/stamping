@@ -1,10 +1,17 @@
 <template>
-  <h1 class="title">Крупносерийное производство металлических изделий</h1>
-  <div class="bg"></div>
-  <!-- <video class="video" autoplay muted loop :style="{ opacity: scrollCount }">
+  <div class="title__container">
+    <h1 class="title"> <span>Штамповка.рф</span>-Сложные штампы, простые решения.</h1>
+    <h2 class="sub-title">
+      До 800 изделий в минуту на одной линии От цветных металлов до дуплекса
+      Сборка, фасовка, упаковка.
+    </h2>
+  </div>
+
+  <!-- <div class="bg"></div> -->
+  <video class="video" autoplay muted loop :style="{ opacity: scrollCount }">
     <source src="../assets/Холодная штамповка металла.mp4" type="video/mp4" />
     Your browser does not support HTML5 video.
-  </video> -->
+  </video>
 </template>
 
 <script setup></script>
@@ -28,13 +35,22 @@
   object-fit: cover;
   filter: brightness(70%);
 }
-.title {
-  color: #ffd400;
+.title__container{
   position: absolute;
   @include fluid("margin-left", 170);
-  font-size: 4em;
-  z-index: 3;
   top: 30%;
   width: 50%;
+  z-index: 3;
+  span{
+    color: #ff7b00;
+  }
+}
+.title {
+  color: #ffd400;
+  font-size: 4em;
+}
+.sub-title{
+  @include fluid("margin-top", 40);
+  color: #ffd400;
 }
 </style>

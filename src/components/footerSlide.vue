@@ -29,9 +29,9 @@ const url =
   height: 100vh;
 }
 .ml {
-  margin-left: 100px;
+  @include fluid("margin-left", 100);
   p {
-    margin-top: 10px;
+    @include fluid("margin-top", 10);
   }
 }
 </style>
