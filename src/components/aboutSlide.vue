@@ -32,11 +32,6 @@
 
 <style scoped lang="scss">
 @import "../fluid.sass";
-.bg {
-  width: 100%;
-  height: 100%;
-  background: #0798ec;
-}
 .container {
   display: flex;
   align-items: center;
@@ -75,10 +70,11 @@
 .marquee {
   position: absolute;
   left: -20%;
-  top: 50%;
+  top: 51%;
   @include fluid("font-size", 20);
   transform: rotate(-90deg);
   @include fluid("letter-spacing", 5);
   width: 50%;
 }
+
 </style>

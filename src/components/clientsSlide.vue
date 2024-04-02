@@ -58,7 +58,6 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: #15b61d;
   width: 100vw;
   height: 100vh;
 }

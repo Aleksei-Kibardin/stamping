@@ -1,5 +1,6 @@
 <template>
   <div class="Wrap__window">
+    <preLoader></preLoader>
     <nav>
       <div class="head__nav">
         <div class="logo"><img src="./assets/logo.svg" alt="logo" /></div>
@@ -30,35 +31,37 @@
         @click="currentSection = i"
       ></div>
     </div>
-    <main id="pagepiling" @click="formActive = false">
-      <div class="section" data-anchor="0">
-        <homeSlide></homeSlide>
+    <main @click="formActive = false">
+      <div id="start" class="section" data-anchor="0">
+        <home-slide></home-slide>
       </div>
       <div class="section" data-anchor="1">
-        <aboutSlide></aboutSlide>
+        <about-slide></about-slide>
       </div>
       <div class="section" data-anchor="2">
-        <stampingSlide></stampingSlide>
+        <stamping-slide></stamping-slide>
       </div>
       <div class="section" data-anchor="3">
-        <gallerySlide></gallerySlide>
+        <gallery-slide></gallery-slide>
       </div>
       <div class="section" data-anchor="4">
-        <clientsSlide></clientsSlide>
+        <clients-slide></clients-slide>
       </div>
       <div class="section" data-anchor="5">
-        <footerSlide></footerSlide>
+        <footer-slide></footer-slide>
       </div>
     </main>
 
     <div class="fixed-form" :class="{ show: formActive }">
-      <fixedForm></fixedForm>
+      <fixed-form></fixed-form>
     </div>
   </div>
 </template>
 
 <script setup>
 import { ref, onMounted, watch } from "vue";
+import { currentSection } from "./services/eventScroll.js";
+import preLoader from "./components/preLoader.vue";
 import homeSlide from "./components/homeSlide.vue";
 import fixedForm from "./components/fixedForm.vue";
 import aboutSlide from "./components/aboutSlide.vue";
@@ -67,10 +70,11 @@ import stampingSlide from "./components/stampingSlide.vue";
 import footerSlide from "./components/footerSlide.vue";
 import clientsSlide from "./components/clientsSlide.vue";
 
-let lastScrollTime = 0;
-const delay = 350;
-const currentSection = ref(0);
-const formActive = ref(true);
+const formActive = ref(false);
+
+setTimeout(() => {
+  formActive.value = true;
+}, 2100);
 
 const anchorList = ref([
   {
@@ -90,14 +94,6 @@ const anchorList = ref([
   },
 ]);
 
-const scrollByEvent = (event) => {
-  if (event > 0 && currentSection.value < 5) {
-    currentSection.value++;
-  } else if (event < 0 && currentSection.value > 0) {
-    currentSection.value--;
-  }
-};
-
 watch(currentSection, () => {
   const currentSectionElement = document.querySelector(
     `[data-anchor="${currentSection.value}"]`
@@ -110,51 +106,22 @@ watch(currentSection, () => {
 });
 
 onMounted(() => {
-  let allowScroll;
-  let startY;
-  let startX;
-  window.addEventListener("wheel", (event) => {
-    const currentTime = new Date().getTime();
-    if (currentTime - lastScrollTime >= delay) {
-      scrollByEvent(event.deltaY); // проверяем сколько прошло время между предыдущим событием чтобы ограничить частоту событий
-      lastScrollTime = currentTime;
-    }
+  document.addEventListener("DOMContentLoaded", function () {
+    console.log(document.querySelector("#start"));
+    document.querySelector("#start").scrollIntoView({
+      behavior: "smooth",
+    });
   });
 
-  window.addEventListener("keydown", function (event) {
-    // обрабатываем нажатие стрелок
-    event.key === "ArrowUp"
-      ? scrollByEvent(-1)
-      : event.key === "ArrowDown" && scrollByEvent(1);
-  });
+  const sectionAnim = document.querySelector("main");
+  setTimeout(() => {
+    sectionAnim.classList.add("shift-up");
 
-  window.addEventListener(
-    "touchstart",
-    function (event) {
-      startY = event.touches[0].clientY;
-      startX = event.touches[0].clientX;
-    },
-    false
-  );
-  window.addEventListener(
-    "touchend",
-    function (event) {
-      let endY = event.changedTouches[0].clientY; // Получаем координаты окончания касания
-      let deltaY = endY - startY; // Рассчитываем разницу между начальной и конечной координатами
-      // Рассчитываем абсолютное значение разницы, чтобы определить наибольшее движение
-      const absDeltaY = Math.abs(deltaY);
-
-      // Если разница больше по Y, чем по X, разрешаем скролл, иначе запрещаем
-      allowScroll =
-        absDeltaY > Math.abs(event.changedTouches[0].clientX - startX);
-
-      // Если разница по Y больше 30 пикселей вверх или вниз, вызываем функцию для прокрутки
-      if (allowScroll) {
-        scrollByEvent(deltaY > 0 ? -1 : 1);
-      }
-    },
-    false
-  );
+    setTimeout(() => {
+      sectionAnim.classList.remove("shift-up");
+      sectionAnim.classList.add("shift-down");
+    }, 100);
+  }, 1100);
 });
 </script>
 
@@ -172,7 +139,7 @@ nav {
   justify-content: center;
   top: 0px;
   left: 0px;
-  z-index: 9999;
+  z-index: 100;
   width: 100vw;
   @include fluid("height", 100);
 }
@@ -210,7 +177,7 @@ nav {
   @include fluid("right", 50);
   @include fluid("top", 200);
   @include fluid("gap", 30);
-  z-index: 99999;
+  z-index: 100;
 }
 .logo {
   img {
@@ -234,6 +201,7 @@ main {
 }
 
 .section {
+  background: rgb(14, 102, 255);
   position: relative;
   height: 100vh;
 }
@@ -250,5 +218,23 @@ main {
 .fixed-form.show {
   @include fluid("width", 500);
   opacity: 1;
+}
+.shift-up {
+  transform: translateY(-900px);
+}
+
+/* Стили для анимации перехода вниз */
+@keyframes slideDown {
+  from {
+    transform: translateY(-500px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/* Применение анимации */
+.shift-down {
+  animation: slideDown 0.9s forwards;
 }
 </style>
