@@ -122,7 +122,7 @@
             </p>
           </div>
           <img
-            src="../assets/ks6qtzbodx2xuqcuzonhpko9hz6g1j16.png"
+            src="../assets/172950595_xl_normal_none.jpg"
             alt=""
           /></div
       ></swiper-slide>
@@ -138,7 +138,7 @@
             </p>
           </div>
           <img
-            src="https://market.severstal.com/upload/medialibrary/c75/xcgfxzy8g00ac3sl11ixuwpqyq52fv3n.png"
+            src="../assets/140394721_xl_normal_none.jpg"
             alt=""
           /></div
       ></swiper-slide>
@@ -154,7 +154,7 @@
             </p>
           </div>
           <img
-            src="https://market.severstal.com/upload/medialibrary/05c/g1obp7gysxmq93lpx3y2xtafiy9mzwjy.png"
+            src="../assets/60758243_xl_normal_none.jpg"
             alt=""
           /></div
       ></swiper-slide>
@@ -173,7 +173,7 @@
             </p>
           </div>
           <img
-            src="https://market.severstal.com/upload/medialibrary/87d/tm9shelqozwjku2ujdi0nx7782s1lter.png"
+            src="../assets/123769407_xl_normal_none.jpg"
             alt=""
           /></div
       ></swiper-slide>
@@ -190,7 +190,7 @@
             </p>
           </div>
           <img
-            src="https://market.severstal.com/upload/medialibrary/0eb/ujulbjcu9wo1u6q3hetydfm1a43abgco.png"
+            src="../assets/120325950_xl_normal_none.jpg"
             alt=""
           /></div
       ></swiper-slide>
@@ -206,7 +206,7 @@
             </p>
           </div>
           <img
-            src="https://market.severstal.com/upload/medialibrary/f0b/f94du6a141as58x4yi6zc1omvpyx33ej.png"
+            src="../assets/131415065_xl_normal_none.jpg"
             alt=""
           /></div
       ></swiper-slide>
@@ -220,7 +220,7 @@
             </p>
           </div>
           <img
-            src="https://market.severstal.com/upload/medialibrary/8f5/usxtp4kucv3wzr5zn7k9rqlas0f96ers.png"
+            src="../assets/153298055_xl_normal_none.jpg"
             alt=""
           /></div
       ></swiper-slide>
@@ -242,7 +242,7 @@
             </p>
           </div>
           <img
-            src="https://market.severstal.com/upload/medialibrary/e0e/g7sqw9x38ssmk3yz0x040r23qushjb7j.png"
+            src="../assets/157407547_xl_normal_none.jpg"
             alt=""
           /></div
       ></swiper-slide>
@@ -266,7 +266,7 @@
             </p>
           </div>
           <img
-            src="https://market.severstal.com/upload/medialibrary/1b7/rfdm6j6kd2lm3do5e8h6fyfdj1wnwit0.png"
+            src="../assets/50690842_xl_normal_none.jpg"
             alt=""
           /></div
       ></swiper-slide>
@@ -286,7 +286,7 @@
             </p>
           </div>
           <img
-            src="https://market.severstal.com/upload/medialibrary/1b7/rfdm6j6kd2lm3do5e8h6fyfdj1wnwit0.png"
+            src="../assets/80331336_xl_normal_none.jpg"
             alt=""
           /></div
       ></swiper-slide>

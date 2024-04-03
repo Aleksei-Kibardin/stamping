@@ -78,19 +78,19 @@ setTimeout(() => {
 
 const anchorList = ref([
   {
-    name: "txt1",
+    name: "Главная",
   },
   {
-    name: "txt2",
+    name: "О нас",
   },
   {
-    name: "txt3",
+    name: "Услуги",
   },
   {
-    name: "txt4",
+    name: "Галерея",
   },
   {
-    name: "txt5",
+    name: "Что-то",
   },
 ]);
 

@@ -6,12 +6,6 @@
     :pagination="{ clickable: true }"
     :scrollbar="{ draggable: true }"
   >
-    <swiper-slide>
-      <div class="swiper__container">
-        <div class="finger"></div>
-        <div><h1>Делаем не только качественно, но и красиво</h1></div>
-      </div>
-    </swiper-slide>
     <swiper-slide class="swiper__img" v-for="index in 16" :key="index"
       ><img class="img" :src="`/img/${index}.png`" alt=""
     /></swiper-slide>
@@ -34,26 +28,6 @@ const modules = [Navigation, Pagination, Scrollbar, A11y];
 @import "../fluid.sass";
 img {
   pointer-events: none;
-}
-.swiper__container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  height: 100vh;
-  width: 100vw;
-  background-color: #fec401;
-}
-.finger {
-  position: absolute;
-  background-image: url(https://alvarotrigo.com/fullPage/imgs/touch-responsive.jpg);
-  align-self: flex-start;
-  transform: rotate(90deg);
-  background-position: 50% 100%;
-  background-repeat: no-repeat;
-  z-index: 10;
-  height: 500px;
-  width: 500px;
 }
 .swiper-button-next {
   color: #ffae00;
