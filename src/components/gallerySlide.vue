@@ -47,9 +47,9 @@ img {
   width: 100vw;
   height: 100vh;
   background-color: #fec401;
-  img{
-    max-width: 800px;
-    max-height: 800px;
+  img {
+    @include fluid("width", 800);
+    @include fluid("height", 800);
   }
 }
 </style>

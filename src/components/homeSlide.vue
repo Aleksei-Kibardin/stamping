@@ -51,11 +51,12 @@ setTimeout(() => {
 }
 .title {
   color: #ffd400;
-  font-size: 4em;
+  @include fontFluid("font-size", 80);
 }
 .sub-title {
   @include fluid("margin-top", 40);
   color: #ffd400;
+  @include fontFluid("font-size", 40);
 }
 .videoOpacity {
   opacity: 1;

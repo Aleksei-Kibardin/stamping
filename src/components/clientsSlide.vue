@@ -172,7 +172,7 @@
     display: none;
   }
 }
-@media (min-width: 200px) and (max-width: 300px) {
+@media (min-width: 200px) and (max-width: 500px) {
   .wrap-process h1 {
     font-size: 14px;
   }
@@ -182,7 +182,17 @@
     display: flex;
     gap: 20px;
     flex-direction: column;
+    font-size: 13px;
+  }
+}
+@media (min-width: 250px) and (max-width: 400px) {
+  .process {
     font-size: 10px;
+  }
+}
+@media (min-width: 199px) and (max-width: 249px) {
+  .process {
+    font-size: 9px;
   }
 }
 </style>

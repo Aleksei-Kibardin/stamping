@@ -7,15 +7,12 @@
       :pagination="{ clickable: true }"
       :scrollbar="{ draggable: true }"
     >
-      <swiper-slide
-      v-for="t in contentList"
-      :key="t"
-      >
+      <swiper-slide v-for="t in contentList" :key="t">
         <div class="wrap-content">
           <div class="content">
             <div class="txt">
               <h1 class="text-xl">
-                {{t.title}}
+                {{ t.title }}
               </h1>
               <p class="fz16">
                 {{ t.txt }}
@@ -76,7 +73,8 @@ const contentList = [
     url: "153298055_xl_normal_none",
   },
   {
-    title: "Проектирование и моделирование изделий и станочных оснасток для ихпроизводства.",
+    title:
+      "Проектирование и моделирование изделий и станочных оснасток для ихпроизводства.",
     txt: "Для создания изделия необходим пакет чертежей на деталь и оснастку. Это работа конструкторского отдела завода. Полный инжиниринговый цикл – от разработки изделия, до проектирования техпроцесса изготовления продукции. При необходимости, внесем изменения в изделие, спроектируем новое, предложим замену материала, рассчитаем крепеж на допустимые нагрузки, посчитаем устойчивость к атмосферным воздействиям и проведем испытания.",
     url: "157407547_xl_normal_none",
   },
@@ -86,11 +84,12 @@ const contentList = [
     url: "50690842_xl_normal_none",
   },
   {
-    title: "Инженерное сопровождение изделия (расчет усилий, допустимых нагрузок, модификаций)",
+    title:
+      "Инженерное сопровождение изделия (расчет усилий, допустимых нагрузок, модификаций)",
     txt: "В нашей практике, мы иногда сталкиваемся с необходимостью внесения небольших изменений в конструкцию изделия. Скорее всего, для этого не придётся изменять всю оснастку. Достаточно изменить лишь некоторые части. Мы всегда открыты новому, это – залог эволюционного развития.",
     url: "80331336_xl_normal_none",
   },
-]
+];
 </script>
 
 <style lang="scss" scoped>
@@ -100,9 +99,11 @@ const contentList = [
   align-items: center;
   height: 100%;
   background: #000;
+  background-image: linear-gradient(#000000b3, #000000b3),
+    url(https://1zd.netlify.app/assets/Stamping-header-LdjVYYQr.jpg);
+  background-size: cover;
 }
 .wrap-content {
-  background: rgb(238, 107, 0);
   position: relative;
   display: flex;
   align-items: center;
@@ -128,35 +129,59 @@ const contentList = [
 .swiper-pagination-bullet {
   background: #ffae00;
 }
-.content{
+.content {
   background: rgb(250, 121, 15);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   display: flex;
   align-items: center;
+  justify-content: space-between;
   width: 100%;
   @include fluid("max-height", 600);
   img {
+    filter: blur(10px);
     @include fluid("margin-left", 20);
-    @include fluid("max-width", 600);
+    @include fluid("max-width", 700);
   }
 }
 .text-xl {
   @include fluid("margin-bottom", 20);
-  @include fluid("font-size", 46);
+  @include fluid("font-size", 26);
   color: #002f6c;
   font-weight: 600;
 }
 .txt {
   z-index: 2;
   @include fluid("margin-left", 150);
-  width: 50%;
   .fz16 {
     @include fluid("font-size", 16);
   }
+
   p {
     @include fluid("margin-top", 30);
     @include fluid("font-size", 24);
   }
+}
+@media (min-width: 200px) and (max-width: 461px) {
+  .txt {
+    z-index: 2;
+    @include fluid("margin-left", 50);
+    .fz16 {
+      @include fluid("font-size", 15);
+    }
+
+    p {
+      @include fluid("margin-top", 30);
+      @include fluid("font-size", 22);
+    }
+  }
+}
+@media (min-width: 200px) and (max-width: 600px) {
+  .content {
+  img {
+    @include fluid("margin-left", 20);
+    @include fluid("max-width", 500);
+  }
+}
 }
 </style>

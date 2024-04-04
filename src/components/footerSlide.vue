@@ -27,11 +27,21 @@ const url =
   background-color: rgb(39, 39, 39);
   width: 100vw;
   height: 100vh;
+  img {
+    @include fluid("width", 650);
+    @include fluid("height", 500);
+  }
 }
 .ml {
   @include fluid("margin-left", 100);
+  @include fluid("margin-top", 40);
   p {
     @include fluid("margin-top", 10);
+  }
+}
+@media (min-width: 200px) and (max-width: 600px) {
+  .map{
+    flex-direction: column;
   }
 }
 </style>

@@ -74,12 +74,11 @@ const formData = reactive({
   position: absolute;
   bottom: 0px;
   right: 0px;
-  width: 100%;
-  height: 100%;
+  @include fluid("width", 500);
   @include fluid("padding", 20);
   @include fluid("gap", 10);
   display: flex;
-  align-items: start;
+  align-items: center;
   flex-direction: column;
   background: #fff;
 }
@@ -118,6 +117,7 @@ const formData = reactive({
 .form__label {
   position: absolute;
   @include fluid("top", -6);
+  @include fluid("font-size", 16);
   display: block;
   transition: 0.2s;
   color: rgb(0, 0, 0);
@@ -132,22 +132,32 @@ const formData = reactive({
     font-size: 0.9rem;
     font-weight: 700;
   }
- 
+
   @include fluid("border-width", 3);
   font-weight: 700;
   border-image-slice: 1;
 }
 .bot-send-mail {
-  color: #fff;
-  background-color: #e74c3c;
+  display: flex;
+  gap: 10px;
+  color: #ffac30;
   outline: none;
+  font-weight: 900;
   border: 0;
-  color: #fff;
-  padding: 10px 20px;
-  text-transform: uppercase;
-  @include fluid("margin-top", 10);
+  background-color: #fff;
+  @include fluid("margin-top", 20);
   @include fluid("border-radius", 2);
   cursor: pointer;
   position: relative;
+}
+.bot-send-mail::after {
+  content: "";
+  display: block;
+  height: 20px;
+  width: 20px;
+  border: solid #ffac30;
+  border-width: 0 2px 2px 0;
+  transform: rotate(-45deg);
+  -webkit-transform: rotate(-45deg);
 }
 </style>

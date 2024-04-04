@@ -181,7 +181,7 @@ nav {
 }
 .logo {
   img {
-    @include fluid("height", 50);
+    @include fluid("width", 150);
   }
 }
 .dot {
