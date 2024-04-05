@@ -48,7 +48,7 @@ img {
   height: 100vh;
   background-color: #fec401;
   img {
-    @include fluid("width", 800);
+    @include fluid("max-width", 1200);
     @include fluid("height", 800);
   }
 }

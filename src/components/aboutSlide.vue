@@ -64,6 +64,12 @@
     }
     .list{
       @include fluid("margin-top", 100);
+      h2{
+        @include fluid("font-size", 25);
+      }
+      li{
+        @include fluid("font-size", 20);
+      }
     }
   }
 }

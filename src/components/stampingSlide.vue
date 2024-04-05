@@ -139,7 +139,6 @@ const contentList = [
   width: 100%;
   @include fluid("max-height", 600);
   img {
-    filter: blur(10px);
     @include fluid("margin-left", 20);
     @include fluid("max-width", 700);
   }
