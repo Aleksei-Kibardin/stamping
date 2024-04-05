@@ -41,9 +41,8 @@ setTimeout(() => {
 }
 .title__container {
   position: absolute;
-  @include fluid("margin-left", 170);
+  @include fluid("margin-left", 100);
   top: 30%;
-  width: 50%;
   z-index: 3;
   span {
     color: #ff7b00;
