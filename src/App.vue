@@ -206,7 +206,6 @@ main {
   height: 100vh;
 }
 .fixed-form {
-  @include fluid("height", 300);
   z-index: 100;
   width: 0px;
   bottom: 0px;
@@ -214,10 +213,17 @@ main {
   opacity: 0;
   position: fixed;
   transition: all 1s ease 0s;
+  transform: translateX(200px);
 }
 .fixed-form.show {
   @include fluid("width", 500);
   opacity: 1;
+  transform: translateX(0px);
+}
+@media (min-width: 200px) and (max-width: 1000px) {
+  .fixed-form.show {
+    width: 100vw;
+  }
 }
 .shift-up {
   transform: translateY(-900px);

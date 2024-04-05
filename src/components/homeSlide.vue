@@ -42,6 +42,7 @@ setTimeout(() => {
 .title__container {
   position: absolute;
   @include fluid("margin-left", 100);
+  width: 80%;
   top: 30%;
   z-index: 3;
   span {

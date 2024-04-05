@@ -67,6 +67,7 @@ const formData = reactive({
   color: #000;
 }
 .form__container {
+  position: relative;
   height: 100%;
 }
 
@@ -81,6 +82,11 @@ const formData = reactive({
   align-items: center;
   flex-direction: column;
   background: #fff;
+}
+@media (min-width: 200px) and (max-width: 1000px) {
+  .obratnuj-zvonok {
+  width: 100%;
+}
 }
 
 .form-zvonok {
@@ -159,5 +165,6 @@ const formData = reactive({
   border-width: 0 2px 2px 0;
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
+  transition: all 1s ease 0s;
 }
 </style>

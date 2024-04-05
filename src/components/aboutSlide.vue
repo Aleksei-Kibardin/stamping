@@ -57,18 +57,17 @@
     }
     .txt {
       @include fluid("margin-top", 70);
-      @include fluid("font-size", 24);
-      font-size: 20px;
+      @include fluid("font-size", 28);
       bottom: 30%;
       width: 60%;
     }
     .list{
       @include fluid("margin-top", 100);
       h2{
-        @include fluid("font-size", 25);
+        @include fluid("font-size", 30);
       }
       li{
-        @include fluid("font-size", 20);
+        @include fluid("font-size", 24);
       }
     }
   }
