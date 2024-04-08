@@ -307,6 +307,15 @@ main {
   transition: all 0.3s ease 0s;
 }
 @media (min-width: 200px) and (max-width: 500px) {
+  .dot-right {
+    top: auto;
+    bottom: 10%;
+  }
+  .dot {
+  cursor: pointer;
+  @include fluid("width", 20);
+  @include fluid("height", 20);
+}
   .head__nav {
     border-radius: 0;
     padding: 0;
@@ -321,7 +330,7 @@ main {
     align-self: center;
     opacity: 0;
     align-items: end;
-    margin-top: 80px;
+    @include fluid("margin-top", 200);
     width: 100%;
     height: 100%;
     transform: translateX(500px);
