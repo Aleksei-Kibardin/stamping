@@ -85,6 +85,7 @@ setTimeout(() => {
   formActive.value = true;
 }, 2100);
 
+
 const anchorList = ref([
   {
     name: "Главная",
@@ -106,6 +107,7 @@ const anchorList = ref([
 const isActive = ref(false);
 
 watch(currentSection, () => {
+  formActive.value = false
   const currentSectionElement = document.querySelector(
     `[data-anchor="${currentSection.value}"]`
   );
