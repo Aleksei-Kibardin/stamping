@@ -11,9 +11,7 @@
         >
           <span></span>
         </div>
-        <div class="nav-border__container"
-        :class="{ active: isActive }"
-        >
+        <div class="nav-border__container" :class="{ active: isActive }">
           <div
             class="anchor"
             v-for="(t, i) in anchorList"
@@ -40,7 +38,7 @@
         @click="currentSection = i"
       ></div>
     </div>
-    <main @click="formActive = false, isActive = false">
+    <main @click="(formActive = false), (isActive = false)">
       <div id="start" class="section" data-anchor="0">
         <home-slide></home-slide>
       </div>
@@ -85,7 +83,6 @@ setTimeout(() => {
   formActive.value = true;
 }, 2100);
 
-
 const anchorList = ref([
   {
     name: "Главная",
@@ -110,7 +107,7 @@ const anchorList = ref([
 const isActive = ref(false);
 
 watch(currentSection, () => {
-  formActive.value = false
+  formActive.value = false;
   const currentSectionElement = document.querySelector(
     `[data-anchor="${currentSection.value}"]`
   );
@@ -304,30 +301,39 @@ main {
 .menu-btn::before,
 .menu-btn::after {
   content: "";
-  background-color:#ffd900;
+  background-color: #ffd900;
   height: 1px;
   @include fluid("width", 45);
   transition: all 0.3s ease 0s;
 }
 @media (min-width: 200px) and (max-width: 500px) {
-  .menu-btn{
+  .head__nav {
+    border-radius: 0;
+    padding: 0;
+  }
+  .menu-btn {
     display: flex;
   }
-  .nav-border__container{
+  .nav-border__container {
+    background: #2e2e2eb0;
     position: absolute;
     justify-content: center;
+    align-self: center;
     opacity: 0;
+    align-items: end;
+    margin-top: 80px;
     width: 100%;
-    transform: translateY(-100px);
+    height: 100%;
+    transform: translateX(500px);
     transition: all 1s ease 0s;
-    .anchor{
+    .anchor {
       font-size: 11px;
     }
   }
-  .nav-border__container.active{
+  .nav-border__container.active {
     opacity: 1;
     width: 100%;
-    transform: translateY(40px);
+    transform: translateX(0px);
   }
 }
 </style>
