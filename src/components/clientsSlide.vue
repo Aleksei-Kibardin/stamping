@@ -90,7 +90,7 @@
 .wrap-process {
   z-index: 1;
   @include fluid("margin-top", 120);
-  height: 50vh;
+  height: 80vh;
   color: #fff;
   display: flex;
   flex-direction: column;
@@ -101,7 +101,6 @@
 }
 .process {
   width: 60%;
-  height: 30vw;
   display: grid;
   @include fluid("font-size", 16);
   grid-template-areas:
