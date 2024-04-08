@@ -220,7 +220,7 @@ main {
 }
 
 .section {
-  background: rgb(63, 63, 63);
+  background: #2e2e2e;
   position: relative;
   height: 100vh;
 }

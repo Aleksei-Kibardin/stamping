@@ -167,6 +167,9 @@ const contentList = [
   }
 }
 @media (min-width: 200px) and (max-width: 600px) {
+  .swiper__container{
+    background: none;
+  }
   .content {
     height: 40%;
     max-height: none;
