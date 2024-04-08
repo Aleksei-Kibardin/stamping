@@ -46,7 +46,7 @@ img {
   align-items: center;
   width: 100vw;
   height: 100vh;
-  background-color: #fec401;
+
   img {
     @include fluid("max-width", 1200);
     @include fluid("height", 800);

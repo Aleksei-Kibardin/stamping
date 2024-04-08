@@ -1,5 +1,5 @@
 <template>
-  <div class="form__container">
+  <div class="form__container" @click="fff()">
     <form
       class="obratnuj-zvonok"
       @submit.prevent="submitForm(formData, formSubmitted, message)"
@@ -58,6 +58,11 @@ const formData = reactive({
   number: "",
   email: "",
 });
+
+const fff = () => {
+console.log(message.value)
+console.log(formData.value)
+}
 </script>
 
 <style scoped lang="scss">

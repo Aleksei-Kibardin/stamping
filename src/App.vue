@@ -217,7 +217,7 @@ main {
 }
 
 .section {
-  background: rgb(14, 102, 255);
+  background: rgb(63, 63, 63);
   position: relative;
   height: 100vh;
 }

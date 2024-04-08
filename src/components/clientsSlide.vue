@@ -61,6 +61,10 @@
         </div>
       </div>
     </div>
+    <video class="video" autoplay muted loop :class="{ videoOpacity: opacity }">
+      <source src="../assets/viedeo.mp4" type="video/mp4" />
+      Your browser does not support HTML5 video.
+    </video>
   </div>
 </template>
 
@@ -68,6 +72,15 @@
 
 <style lang="scss" scoped>
 @import "../fluid.sass";
+
+.video {
+  position: absolute;
+  height: 100vh;
+  width: 100vw;
+  z-index: 0;
+  object-fit: cover;
+  filter: brightness(60%);
+}
 .clients__container {
   background-color: #6b00ff;
   display: flex;
@@ -75,6 +88,7 @@
   height: 100vh;
 }
 .wrap-process {
+  z-index: 1;
   @include fluid("margin-top", 120);
   height: 50vh;
   color: #fff;
@@ -140,7 +154,6 @@
   z-index: 3;
 }
 
-
 @media (min-width: 200px) and (max-width: 350px) {
   .wrap-process {
     position: relative;
@@ -172,5 +185,4 @@
     display: none;
   }
 }
-
 </style>
