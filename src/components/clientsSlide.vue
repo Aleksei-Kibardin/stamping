@@ -88,6 +88,7 @@
   height: 100vh;
 }
 .wrap-process {
+  position: relative;
   z-index: 1;
   @include fluid("margin-top", 120);
   height: 80vh;
@@ -100,9 +101,9 @@
   @include fluid("padding-bottom", 20);
 }
 .process {
-  width: 60%;
+  width: 80%;
   display: grid;
-  @include fluid("font-size", 16);
+  @include fluid("font-size", 20);
   grid-template-areas:
     "a a a m . . ."
     ". . . m b b b"
