@@ -1,10 +1,6 @@
 <template>
-  <div class="form__container" @click="fff()">
-    <form
-      class="obratnuj-zvonok"
-      @submit.prevent="submitForm(formData, formSubmitted, message)"
-      v-if="!formSubmitted"
-    >
+  <div class="form__container">
+    <form class="obratnuj-zvonok" v-if="!formSubmitted">
       <input type="hidden" name="form-name" value="name_of_my_form" />
 
       <div class="form-zvonok">
@@ -42,8 +38,11 @@
           <label for="name" class="form__label">Номер телефона (с кодом)</label>
         </div>
       </div>
-      <button class="bot-send-mail" type="submit">ОБСУДИТЬ ПРОЕКТ</button>
+      <div @click="post()" class="bot-send-mail">ОБСУДИТЬ ПРОЕКТ</div>
     </form>
+    <div class="message" v-if="formSubmitted">
+      <h3>{{ message }}</h3>
+    </div>
   </div>
 </template>
 
@@ -59,10 +58,9 @@ const formData = reactive({
   email: "",
 });
 
-const fff = () => {
-console.log(message.value)
-console.log(formData.value)
-}
+const post = async () => {
+  await submitForm(formData, formSubmitted, message);
+};
 </script>
 
 <style scoped lang="scss">
@@ -90,8 +88,8 @@ console.log(formData.value)
 }
 @media (min-width: 200px) and (max-width: 1000px) {
   .obratnuj-zvonok {
-  width: 100%;
-}
+    width: 100%;
+  }
 }
 
 .form-zvonok {
@@ -171,5 +169,11 @@ console.log(formData.value)
   transform: rotate(-45deg);
   -webkit-transform: rotate(-45deg);
   transition: all 1s ease 0s;
+}
+.message {
+  display: flex;
+  justify-content: center;
+  padding: 10px;
+  background-color: chartreuse;
 }
 </style>

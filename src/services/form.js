@@ -9,21 +9,22 @@ export const submitForm = async (formData, formSubmitted, message) => {
     });
 
     // Устанавливаем formSubmitted в true, чтобы показать сообщение об успешной отправке
-    formSubmitted = true;
+    formSubmitted.value = true;
     console.log(formData)
     // Проверяем успешность запроса
     if (!response.ok) {
-      message = "Ошибка при отправке формы";
+      message.value = "Ошибка при отправке формы";
       throw new Error("Ошибка при отправке формы, попробуйте позже");
     } else {
-      message = "Заявка успешно отправлена!";
+      message.value = "Заявка успешно отправлена!";
     }
-    console.log(response);
+    console.log(message.value);
     setTimeout(() => {
-      formSubmitted = false;
+      formSubmitted.value = false;
     }, 4000);
   } catch (error) {
     console.error(error);
     // Обработка ошибки отправки формы
   }
+  return message
 };
