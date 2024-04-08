@@ -74,12 +74,12 @@
 }
 .marquee {
   position: absolute;
-  left: -20%;
+  @include fluid("left", -500);
   top: 51%;
   @include fluid("font-size", 20);
   transform: rotate(-90deg);
   @include fluid("letter-spacing", 5);
-  width: 50%;
+  @include fluid("width", 1080);
 }
 
 </style>

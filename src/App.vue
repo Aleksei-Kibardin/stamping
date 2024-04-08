@@ -4,7 +4,16 @@
     <nav>
       <div class="head__nav">
         <div class="logo"><img src="./assets/logo.svg" alt="logo" /></div>
-        <div class="nav-border__container">
+        <div
+          class="menu-btn"
+          :class="{ active: isActive }"
+          @click="isActive = !isActive"
+        >
+          <span></span>
+        </div>
+        <div class="nav-border__container"
+        :class="{ active: isActive }"
+        >
           <div
             class="anchor"
             v-for="(t, i) in anchorList"
@@ -31,7 +40,7 @@
         @click="currentSection = i"
       ></div>
     </div>
-    <main @click="formActive = false">
+    <main @click="formActive = false, isActive = false">
       <div id="start" class="section" data-anchor="0">
         <home-slide></home-slide>
       </div>
@@ -93,6 +102,8 @@ const anchorList = ref([
     name: "Что-то",
   },
 ]);
+
+const isActive = ref(false);
 
 watch(currentSection, () => {
   const currentSectionElement = document.querySelector(
@@ -242,5 +253,73 @@ main {
 /* Применение анимации */
 .shift-down {
   animation: slideDown 0.9s forwards;
+}
+.menu-btn.active::before {
+  position: relative;
+  transform: rotate(45deg);
+  @include fluid("top", 10);
+}
+
+.menu-btn.active::after {
+  position: relative;
+  transform: rotate(-90deg);
+  cursor: default;
+}
+.menu-btn.active::after {
+  position: relative;
+  transform: rotate(-45deg);
+  @include fluid("bottom", 8);
+}
+
+.menu-btn.active span {
+  transform: scale(0);
+}
+
+.menu-btn {
+  display: none;
+  justify-content: center;
+  flex-direction: column;
+  @include fluid("gap", 6.5);
+  @include fluid("width", 40);
+  @include fluid("height", 30);
+  position: relative;
+  cursor: pointer;
+}
+.menu-btn span {
+  background-color: #ffd900;
+  height: 1px;
+  @include fluid("width", 45);
+  @include fluid("top", 14);
+  transition: all 0.3s ease 0s;
+}
+
+.menu-btn::before,
+.menu-btn::after {
+  content: "";
+  background-color:#ffd900;
+  height: 1px;
+  @include fluid("width", 45);
+  transition: all 0.3s ease 0s;
+}
+@media (min-width: 200px) and (max-width: 500px) {
+  .menu-btn{
+    display: flex;
+  }
+  .nav-border__container{
+    position: absolute;
+    justify-content: center;
+    opacity: 0;
+    width: 100%;
+    transform: translateY(-100px);
+    transition: all 1s ease 0s;
+    .anchor{
+      font-size: 11px;
+    }
+  }
+  .nav-border__container.active{
+    opacity: 1;
+    width: 100%;
+    transform: translateY(40px);
+  }
 }
 </style>

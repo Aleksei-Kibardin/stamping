@@ -19,6 +19,10 @@
               </p>
             </div>
             <img :src="`/img/${t.url}.jpg`" alt="" />
+            <div
+              :style="{ 'background-image': `url(/img/${t.url}.jpg)` }"
+              class="bg"
+            ></div>
           </div>
         </div>
       </swiper-slide>
@@ -45,7 +49,7 @@ const contentList = [
   {
     title: "Ручная холодная листовая штамповка",
     txt: "Всё, что невозможно или неудобно изготавливать автоматической штамповкой. Сюда входит работа небольшими партиями, вытяжка и глубокая вытяжка, изготовление деталей с резьбой, петлёй или отбортовкой.",
-    url: "60758243_xl_normal_none",
+    url: "140394721_xl_normal_none",
   },
   {
     title: "Холодная объемная штамповка",
@@ -119,15 +123,7 @@ const contentList = [
   filter: brightness(70%);
 }
 .swiper-button-next {
-  color: #ffae00;
-  user-select: none;
-}
-.swiper-button-prev {
-  color: #ffae00;
-  user-select: none;
-}
-.swiper-pagination-bullet {
-  background: #ffae00;
+  margin-top: -100px !important;
 }
 .content {
   background: rgb(250, 121, 15);
@@ -142,6 +138,9 @@ const contentList = [
     @include fluid("margin-left", 20);
     @include fluid("max-width", 700);
   }
+}
+.bg {
+  display: none;
 }
 .text-xl {
   @include fluid("margin-bottom", 20);
@@ -165,22 +164,38 @@ const contentList = [
   .txt {
     z-index: 2;
     @include fluid("margin-left", 50);
-    .fz16 {
-      @include fluid("font-size", 15);
-    }
-
-    p {
-      @include fluid("margin-top", 30);
-      @include fluid("font-size", 22);
-    }
   }
 }
 @media (min-width: 200px) and (max-width: 600px) {
   .content {
-  img {
-    @include fluid("margin-left", 20);
-    @include fluid("max-width", 500);
+    height: 40%;
+    max-height: none;
+    .txt{
+      margin: 0;
+      padding: 40px;
+    }
+    img {
+      @include fluid("margin-left", 20);
+      @include fluid("max-width", 500);
+      display: none;
+    }
+    .bg {
+      filter: brightness(50%);
+      position: absolute;
+      display: block;
+      width: 100%;
+      height: 100%;
+      background-size: cover;
+    }
+    .text-xl {
+      @include fluid("font-size", 40);
+      color: #00a2ff;
+      font-weight: bold;
+    }
+    .fz16 {
+      @include fluid("font-size", 27);
+      font-weight: bold;
+    }
   }
-}
 }
 </style>

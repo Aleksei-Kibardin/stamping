@@ -71,17 +71,15 @@
 .clients__container {
   background-color: #6b00ff;
   display: flex;
-  align-items: center;
-  justify-content: center;
   width: 100vw;
   height: 100vh;
 }
 .wrap-process {
+  @include fluid("margin-top", 120);
   height: 50vh;
   color: #fff;
   display: flex;
   flex-direction: column;
-  justify-content: center;
   align-items: center;
 }
 .wrap-process h1 {
@@ -143,7 +141,7 @@
 }
 
 
-@media (min-width: 200px) and (max-width: 800px) {
+@media (min-width: 200px) and (max-width: 350px) {
   .wrap-process {
     position: relative;
     padding: 20px;
@@ -154,8 +152,9 @@
     align-items: center;
   }
   .wrap-process h1 {
-    font-size: 19px;
-    padding-bottom: 40px;
+    @include fluid("font-size", 50);
+    @include fluid("margin-top", 60);
+    @include fluid("padding-bottom", 20);
   }
   .process {
     width: 100%;
@@ -163,36 +162,15 @@
     display: flex;
     gap: 20px;
     flex-direction: column;
-    font-size: 14px;
+    @include fluid("font-size", 25);
   }
   .process h2 {
+    @include fluid("font-size", 30);
     padding-bottom: 10px;
   }
   .midle-line {
     display: none;
   }
 }
-@media (min-width: 200px) and (max-width: 500px) {
-  .wrap-process h1 {
-    font-size: 14px;
-  }
-  .process {
-    width: 100%;
-    height: 100%;
-    display: flex;
-    gap: 20px;
-    flex-direction: column;
-    font-size: 13px;
-  }
-}
-@media (min-width: 250px) and (max-width: 400px) {
-  .process {
-    font-size: 10px;
-  }
-}
-@media (min-width: 199px) and (max-width: 249px) {
-  .process {
-    font-size: 9px;
-  }
-}
+
 </style>
