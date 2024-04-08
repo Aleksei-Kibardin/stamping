@@ -40,13 +40,19 @@ setTimeout(() => {
   transition: all 1s ease 0s;
 }
 .title__container {
+  padding: 10px;
+  background: #2e2e2e6c;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   position: absolute;
   @include fluid("margin-left", 100);
-  width: 80%;
+  @include fluid("border-radius", 20);
+  width: 60%;
   top: 30%;
   z-index: 3;
   span {
-    color: #ff7b00;
+    color: #fff;
   }
 }
 .title {

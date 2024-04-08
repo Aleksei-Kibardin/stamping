@@ -172,6 +172,7 @@ const post = async () => {
 }
 .message {
   display: flex;
+  position: relative;
   justify-content: center;
   padding: 10px;
   background-color: chartreuse;

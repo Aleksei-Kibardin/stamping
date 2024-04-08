@@ -160,11 +160,14 @@ nav {
   @include fluid("height", 100);
 }
 .head__nav {
+  @include fluid("border-bottom-left-radius", 20);
+  @include fluid("border-bottom-right-radius", 20);
+  background: #2e2e2eb0;
   @include fluid("padding", 10);
   display: flex;
   justify-content: space-between;
   align-items: center;
-  border-bottom: 1px solid #ffffff;
+
   @include fluid("width", 1564);
   height: 100%;
 }

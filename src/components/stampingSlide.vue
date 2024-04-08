@@ -126,7 +126,7 @@ const contentList = [
   margin-top: -100px !important;
 }
 .content {
-  background: rgb(250, 121, 15);
+  background: rgb(43, 43, 43);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   display: flex;
@@ -145,7 +145,7 @@ const contentList = [
 .text-xl {
   @include fluid("margin-bottom", 20);
   @include fluid("font-size", 26);
-  color: #002f6c;
+  color: rgb(250, 121, 15);;
   font-weight: 600;
 }
 .txt {
