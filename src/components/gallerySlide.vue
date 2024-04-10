@@ -6,8 +6,8 @@
     :pagination="{ clickable: true }"
     :scrollbar="{ draggable: true }"
   >
-    <swiper-slide class="swiper__img" v-for="index in 16" :key="index"
-      ><img class="img" :src="`/img/${index}.png`" alt=""
+    <swiper-slide class="swiper__img" v-for="index in 22" :key="index"
+      ><img class="img" :src="`/img/${index}.jpg`" alt=""
     /></swiper-slide>
   </swiper>
 </template>
@@ -33,14 +33,8 @@ img {
   color: #ffae00;
   user-select: none;
 }
-.swiper-button-prev {
-  color: #ffae00;
-  user-select: none;
-}
-.swiper-pagination-bullet {
-  background: #ffae00;
-}
 .swiper__img {
+  background: #fff;
   display: flex;
   justify-content: center;
   align-items: center;
