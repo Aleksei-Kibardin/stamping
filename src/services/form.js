@@ -18,13 +18,13 @@ export const submitForm = async (formData, formSubmitted, message) => {
     } else {
       message.value = "Заявка успешно отправлена!";
     }
-    console.log(message.value);
-    setTimeout(() => {
-      formSubmitted.value = false;
-    }, 4000);
   } catch (error) {
     console.error(error);
     // Обработка ошибки отправки формы
   }
+  console.log(message.value);
+  setTimeout(() => {
+    formSubmitted.value = false;
+  }, 4000);
   return message
 };
