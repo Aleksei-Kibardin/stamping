@@ -103,7 +103,7 @@
 .process {
   width: 80%;
   display: grid;
-  @include fluid("font-size", 20);
+  @include fluid("font-size", 19);
   grid-template-areas:
     "a a a m . . ."
     ". . . m b b b"
@@ -147,7 +147,7 @@
   background-color: #fff;
   @include fluid("width", 40);
   @include fluid("height", 40);
-  @include fluid("font-size", 25);
+  @include fluid("font-size", 26);
   border-radius: 50%;
 }
 .line-item {
