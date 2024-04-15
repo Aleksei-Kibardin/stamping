@@ -114,38 +114,30 @@ watch(currentSection, () => { // наблюдаем за изменением cu
   }
 });
 
-// function getDeviceType() { // проверяем какое устройство использует пользователь и возвращаем результат
-//   const userAgent = navigator.userAgent.toLowerCase();
-//   const isMobile =
-//     /mobile|iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(
-//       userAgent
-//     );
+function getDeviceType() { // проверяем какое устройство использует пользователь и возвращаем результат
+  const userAgent = navigator.userAgent.toLowerCase();
+  const isMobile =
+    /mobile|iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(
+      userAgent
+    );
 
-//   if (isMobile) {
-//     return "mobile";
-//   } else {
-//     return "desktop";
-//   }
-// }
+  if (isMobile) {
+    return "mobile";
+  } else {
+    return "desktop";
+  }
+}
 
-// console.log(getDeviceType()); // если пользователь использует desktop тогда на втором слайде автоматически показываем форму с задержкой в 500 млс
-// if (getDeviceType() === "desktop") {
-//   watch(currentSection, () => {
-//     if (currentSection.value == 1) {
-//       setTimeout(() => {
-//         formActive.value = true;
-//       }, 500);
-//     }
-//   });
-// }
-
-watch(currentSection, () => {
+console.log(getDeviceType()); // если пользователь использует desktop тогда на втором слайде автоматически показываем форму с задержкой в 500 млс
+if (getDeviceType() === "desktop") {
+  watch(currentSection, () => {
     if (currentSection.value == 1) {
       setTimeout(() => {
         formActive.value = true;
       }, 500);
     }
   });
+}
 
 onMounted(() => {
   document.addEventListener("DOMContentLoaded", function () { // автоматически при обновлении страницы поднимаем пользователя на стартовый слайд
@@ -336,8 +328,7 @@ main {
 }
 @media (min-width: 200px) and (max-width: 500px) {
   .dot-right {
-    top: auto;
-    bottom: 10%;
+    top: 60px;
   }
   .dot {
     cursor: pointer;
@@ -358,13 +349,13 @@ main {
     align-self: center;
     opacity: 0;
     align-items: end;
-    @include fluid("margin-top", 200);
+    @include fluid("margin-top", 125);
     width: 100%;
-    height: 100%;
+    height: 10px;
     transform: translateX(500px);
     transition: all 1s ease 0s;
     .anchor {
-      font-size: 11px;
+      @include fluid("font-size", 20);
     }
   }
   .nav-border__container.active {
