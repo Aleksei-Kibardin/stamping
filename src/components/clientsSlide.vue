@@ -3,7 +3,7 @@
     <div class="wrap-process">
       <h1>Этапы работы</h1>
       <div class="process">
-        <div class="grid-process1">
+        <div class="grid-process1 grid-txt">
           <h2>Коммерческое обоснование</h2>
           <p>
             На основании Ваших требований к продукту, мы выработаем оптимальный
@@ -27,7 +27,7 @@
             <p>4</p>
           </div>
         </div>
-        <div class="grid-process2">
+        <div class="grid-process2 grid-txt">
           <h2>Старт</h2>
           <p>
             После заключения договора мы приступаем к проектированию оснастки,
@@ -38,7 +38,7 @@
             чертежа до упаковки занимает от одного до трёх месяцев.
           </p>
         </div>
-        <div class="grid-process3">
+        <div class="grid-process3 grid-txt">
           <h2>Процесс работы</h2>
           <p>
             После создания оснастки, и утверждения опытного образца мы
@@ -48,7 +48,7 @@
             использованные материалы и другие необходимые справки и лицензии.
           </p>
         </div>
-        <div class="grid-process4">
+        <div class="grid-process4 grid-txt">
           <h2>Поставки крупносерийных партий</h2>
           <p>
             Начиная с этого этапа Вы просто заказываете очередную партию товаров
@@ -62,7 +62,7 @@
       </div>
     </div>
     <video class="video" autoplay muted loop :class="{ videoOpacity: opacity }">
-      <source src="../assets/viedeo.mp4" type="video/mp4" />
+      <source src="../assets/video.mp4" type="video/mp4" />
       Your browser does not support HTML5 video.
     </video>
   </div>
@@ -74,6 +74,7 @@
 @import "../fluid.sass";
 
 .video {
+  filter: brightness(80%);
   position: absolute;
   height: 100vh;
   width: 100vw;
@@ -81,7 +82,6 @@
   object-fit: cover;
 }
 .clients__container {
-  background-color: #6b00ff;
   display: flex;
   width: 100vw;
   height: 100vh;
@@ -91,7 +91,7 @@
   z-index: 1;
   @include fluid("margin-top", 120);
   height: 80vh;
-  color: #fff;
+  color: #ffffff;
   display: flex;
   flex-direction: column;
   align-items: center;
@@ -127,6 +127,9 @@
   background-color: white;
   @include fluid("width", 2);
   z-index: 1;
+}
+.grid-txt {
+  text-shadow: 1px 2px #000000;
 }
 .grid-process1 {
   grid-area: a;

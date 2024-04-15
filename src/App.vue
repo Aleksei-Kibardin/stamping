@@ -113,13 +113,31 @@ watch(currentSection, () => {
     });
   }
 });
-watch(currentSection, () => {
-  if (currentSection.value == 1) {
-    setTimeout(() => {
-      formActive.value = true;
-    }, 500);
+
+function getDeviceType() {
+  const userAgent = navigator.userAgent.toLowerCase();
+  const isMobile =
+    /mobile|iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(
+      userAgent
+    );
+
+  if (isMobile) {
+    return "mobile";
+  } else {
+    return "desktop";
   }
-});
+}
+
+console.log(getDeviceType()); // "mobile" or "desktop"
+if (getDeviceType() === "desktop") {
+  watch(currentSection, () => {
+    if (currentSection.value == 1) {
+      setTimeout(() => {
+        formActive.value = true;
+      }, 500);
+    }
+  });
+}
 
 onMounted(() => {
   document.addEventListener("DOMContentLoaded", function () {

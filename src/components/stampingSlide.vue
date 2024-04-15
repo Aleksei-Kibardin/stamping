@@ -192,11 +192,12 @@ const contentList = [
     }
     .text-xl {
       @include fluid("font-size", 40);
-      color: #00a2ff;
+      color: rgb(250, 121, 15);;
       font-weight: bold;
     }
     .fz16 {
       @include fluid("font-size", 27);
+      color: #fff;
       font-weight: bold;
     }
   }
