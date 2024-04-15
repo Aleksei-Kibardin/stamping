@@ -102,7 +102,7 @@ const anchorList = ref([
 
 const isActive = ref(false);
 
-watch(currentSection, () => {
+watch(currentSection, () => { // наблюдаем за изменением currentSection (оно имеет числовое значение) и перелистываем страницу до соответсвующего слайда
   formActive.value = false;
   const currentSectionElement = document.querySelector(
     `[data-anchor="${currentSection.value}"]`
@@ -114,33 +114,41 @@ watch(currentSection, () => {
   }
 });
 
-function getDeviceType() {
-  const userAgent = navigator.userAgent.toLowerCase();
-  const isMobile =
-    /mobile|iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(
-      userAgent
-    );
+// function getDeviceType() { // проверяем какое устройство использует пользователь и возвращаем результат
+//   const userAgent = navigator.userAgent.toLowerCase();
+//   const isMobile =
+//     /mobile|iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(
+//       userAgent
+//     );
 
-  if (isMobile) {
-    return "mobile";
-  } else {
-    return "desktop";
-  }
-}
+//   if (isMobile) {
+//     return "mobile";
+//   } else {
+//     return "desktop";
+//   }
+// }
 
-console.log(getDeviceType()); // "mobile" or "desktop"
-if (getDeviceType() === "desktop") {
-  watch(currentSection, () => {
+// console.log(getDeviceType()); // если пользователь использует desktop тогда на втором слайде автоматически показываем форму с задержкой в 500 млс
+// if (getDeviceType() === "desktop") {
+//   watch(currentSection, () => {
+//     if (currentSection.value == 1) {
+//       setTimeout(() => {
+//         formActive.value = true;
+//       }, 500);
+//     }
+//   });
+// }
+
+watch(currentSection, () => {
     if (currentSection.value == 1) {
       setTimeout(() => {
         formActive.value = true;
       }, 500);
     }
   });
-}
 
 onMounted(() => {
-  document.addEventListener("DOMContentLoaded", function () {
+  document.addEventListener("DOMContentLoaded", function () { // автоматически при обновлении страницы поднимаем пользователя на стартовый слайд
     console.log(document.querySelector("#start"));
     document.querySelector("#start").scrollIntoView({
       behavior: "smooth",
@@ -148,7 +156,7 @@ onMounted(() => {
   });
 
   const sectionAnim = document.querySelector("main");
-  setTimeout(() => {
+  setTimeout(() => {// анимация для прелоадера
     sectionAnim.classList.add("shift-up");
 
     setTimeout(() => {
@@ -177,8 +185,8 @@ nav {
   @include fluid("height", 100);
 }
 .head__nav {
-  @include fluid("border-bottom-left-radius", 20);
-  @include fluid("border-bottom-right-radius", 20);
+  @include fluid("border-bottom-left-radius", 6);
+  @include fluid("border-bottom-right-radius", 6);
   background: rgb(0 0 0 / 30%);
   @include fluid("padding", 10);
   display: flex;
