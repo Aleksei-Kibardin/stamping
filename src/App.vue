@@ -145,7 +145,6 @@ onMounted(() => {
 @import "./fluid.sass";
 * {
   font-family: "Roboto";
-  color: #fff;
 }
 nav {
   position: fixed;
@@ -162,12 +161,12 @@ nav {
 .head__nav {
   @include fluid("border-bottom-left-radius", 20);
   @include fluid("border-bottom-right-radius", 20);
-  background: #2e2e2eb0;
+  background: rgb(0 0 0 / 30%);
   @include fluid("padding", 10);
   display: flex;
   justify-content: space-between;
   align-items: center;
-
+  color: #fff;
   @include fluid("width", 1564);
   height: 100%;
 }
@@ -208,7 +207,8 @@ nav {
   @include fluid("width", 10);
   @include fluid("height", 10);
   border-radius: 100%;
-  background-color: rgba(255, 255, 255, 0.3);
+  border: 1px #000000 solid;
+  background-color: rgb(83, 83, 83);
   transition: all 1s ease 0s;
   z-index: 10;
 }
@@ -220,7 +220,6 @@ main {
 }
 
 .section {
-  background: #2e2e2e;
   position: relative;
   height: 100vh;
 }

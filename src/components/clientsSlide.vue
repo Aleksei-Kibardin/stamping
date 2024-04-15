@@ -79,7 +79,6 @@
   width: 100vw;
   z-index: 0;
   object-fit: cover;
-  filter: brightness(60%);
 }
 .clients__container {
   background-color: #6b00ff;

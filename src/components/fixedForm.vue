@@ -78,13 +78,14 @@ const post = async () => {
   position: absolute;
   bottom: 0px;
   right: 0px;
+  box-shadow: 0 0 20px 0.5px #5858589d;
   @include fluid("width", 500);
   @include fluid("padding", 20);
   @include fluid("gap", 10);
   display: flex;
   align-items: center;
   flex-direction: column;
-  background: #fff;
+  background: #eeeeee;
 }
 @media (min-width: 200px) and (max-width: 1000px) {
   .obratnuj-zvonok {
@@ -153,7 +154,7 @@ const post = async () => {
   outline: none;
   font-weight: 900;
   border: 0;
-  background-color: #fff;
+  background-color: #eeeeee;
   @include fluid("margin-top", 20);
   @include fluid("border-radius", 2);
   cursor: pointer;

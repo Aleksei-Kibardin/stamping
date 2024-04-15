@@ -126,7 +126,7 @@ const contentList = [
   margin-top: -100px !important;
 }
 .content {
-  background: rgb(43, 43, 43);
+  background: rgb(231, 231, 231);
   box-shadow: 0px 4px 8px rgba(0, 0, 0, 0.1);
   position: relative;
   display: flex;

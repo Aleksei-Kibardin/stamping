@@ -24,7 +24,7 @@ const url =
   display: flex;
   align-items: center;
   justify-content: center;
-  background-color: rgb(39, 39, 39);
+  background-color: rgb(233, 233, 233);
   width: 100vw;
   height: 100vh;
   img {
