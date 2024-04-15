@@ -49,7 +49,7 @@
     align-self: center;
     .title {
       color: #ffd400;
-      text-align: end;
+      text-align: center;
       font-size: 5rem;
       @include fluid("font-size", 60);
       z-index: 3;
@@ -58,6 +58,7 @@
     .txt {
       @include fluid("margin-top", 70);
       @include fluid("font-size", 28);
+      text-align: justify;
       bottom: 30%;
       width: 60%;
     }
@@ -67,6 +68,7 @@
         @include fluid("font-size", 30);
       }
       li{
+        @include fluid("margin-left", -15);
         @include fluid("font-size", 24);
       }
     }

@@ -79,10 +79,6 @@ import clientsSlide from "./components/clientsSlide.vue";
 
 const formActive = ref(false);
 
-setTimeout(() => {
-  formActive.value = true;
-}, 2100);
-
 const anchorList = ref([
   {
     name: "Главная",
@@ -115,6 +111,13 @@ watch(currentSection, () => {
     currentSectionElement.scrollIntoView({
       behavior: "smooth",
     });
+  }
+});
+watch(currentSection, () => {
+  if (currentSection.value == 1) {
+    setTimeout(() => {
+      formActive.value = true;
+    }, 500);
   }
 });
 
@@ -312,10 +315,10 @@ main {
     bottom: 10%;
   }
   .dot {
-  cursor: pointer;
-  @include fluid("width", 20);
-  @include fluid("height", 20);
-}
+    cursor: pointer;
+    @include fluid("width", 20);
+    @include fluid("height", 20);
+  }
   .head__nav {
     border-radius: 0;
     padding: 0;

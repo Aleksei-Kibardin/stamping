@@ -7,7 +7,7 @@
     :scrollbar="{ draggable: true }"
   >
     <swiper-slide class="swiper__img" v-for="index in 22" :key="index"
-      ><img class="img" :src="`/img/${index}.jpg`" alt=""
+      ><img class="img" :src="`/img/${index}.jpeg`" alt="" loading="lazy"
     /></swiper-slide>
   </swiper>
 </template>
