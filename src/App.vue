@@ -326,7 +326,7 @@ main {
     display: flex;
   }
   .nav-border__container {
-    background: #2e2e2eb0;
+    background: rgba(0, 0, 0, 0.3);
     position: absolute;
     justify-content: center;
     align-self: center;
