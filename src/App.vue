@@ -42,7 +42,7 @@
       <div id="start" class="section" data-anchor="0">
         <home-slide></home-slide>
       </div>
-      <div class="section" data-anchor="1">
+      <div class="section about" data-anchor="1">
         <about-slide></about-slide>
       </div>
       <div class="section" data-anchor="2">
@@ -240,6 +240,10 @@ main {
 .section {
   position: relative;
   height: 100vh;
+}
+.about{
+  background-image: url(/src/assets/eng.png);
+  background-size: cover;
 }
 .fixed-form {
   z-index: 100;

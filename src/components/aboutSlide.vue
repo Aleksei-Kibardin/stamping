@@ -36,6 +36,7 @@
   display: flex;
   align-items: center;
   position: absolute;
+  color: #fff;
   flex-direction: column;
   font-size: 20px;
   height: 80%;
@@ -75,6 +76,7 @@
   }
 }
 .marquee {
+  color: #fff;
   position: absolute;
   @include fluid("left", -500);
   top: 51%;
