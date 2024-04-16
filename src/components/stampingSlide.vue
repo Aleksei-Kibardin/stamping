@@ -18,7 +18,7 @@
                 {{ t.txt }}
               </p>
             </div>
-            <img :src="`/img/${t.url}.jpeg`" alt="" loading="lazy" />
+            <img :src="`/img/${t.url}.jpeg`" alt=""/>
             <div
               :style="{ 'background-image': `url(/img/${t.url}.jpeg)` }"
               class="bg"
@@ -168,9 +168,7 @@ const contentList = [
   }
 }
 @media (min-width: 200px) and (max-width: 600px) {
-  .swiper__container{
-    background: none;
-  }
+
   .content {
     height: 40%;
     max-height: none;
