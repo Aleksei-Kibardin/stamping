@@ -90,7 +90,7 @@ const anchorList = ref([
     name: "Услуги",
   },
   {
-    name: "Галерея",
+    name: "примеры продукции",
   },
   {
     name: "Этапы работы",
@@ -243,6 +243,7 @@ main {
 }
 .about{
   background-image: url(/src/assets/eng.png);
+  filter: brightness(140%);
   background-size: cover;
 }
 .fixed-form {

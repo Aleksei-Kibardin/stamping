@@ -3,20 +3,17 @@
     <img :src="`${url}`" alt="" />
     <div class="ml">
       <h4>Первый завод © 2024</h4>
-      <p>Адрес: Лиговский проспект, 52литО</p>
-      <p>Почта: xxxxxxxx@mail.com</p>
-      <p>Почта: xxxxxxxx@mail.com</p>
-      <p>Почта: xxxxxxxx@mail.com</p>
-      <p>Телефон: 8800553535</p>
-      <p>Телефон: 8800553535</p>
-      <p>Телефон: 8800553535</p>
+      <p>Адрес: г. Санкт-Петербург, Лиговский проспект, 52 К</p>
+      <p>Инженерный отдел: </p>
+      <p>Телефон: +7-901-971-46-64</p>
+      <p>Электронная почта: spb9714664@yandex.ru</p>
     </div>
   </div>
 </template>
 
 <script setup>
 const url =
-  "https://static-maps.yandex.ru/v1?ll=30.360425,59.923946&size=650,450&z=16&pt=30.360425,59.92394,pm2rdl&apikey=625b26d9-342a-4cd9-a91b-6af62e134a40";
+  "https://static-maps.yandex.ru/v1?ll=30.358134,59.925083&size=650,450&z=16&pt=30.358134,59.925083,pm2rdl&apikey=625b26d9-342a-4cd9-a91b-6af62e134a40";
 </script>
 
 <style scoped lang="scss">
