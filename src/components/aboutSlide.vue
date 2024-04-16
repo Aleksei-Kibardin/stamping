@@ -45,6 +45,7 @@
   top: 13%;
   .content {
     position: relative;
+    text-shadow: 1px 1px #000000;
     width: 73%;
     height: 100%;
     align-self: center;
