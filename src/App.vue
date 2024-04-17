@@ -22,7 +22,7 @@
           </div>
         </div>
         <div class="nav__contact">
-          <span>88005553535</span>
+          <span>+7-901-971-46-64</span>
           <span @click="formActive = !formActive" class="yellow-txt"
             >ЗАКАЗАТЬ ЗВОНОК</span
           >
