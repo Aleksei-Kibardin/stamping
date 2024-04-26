@@ -47,7 +47,7 @@
 </template>
 
 <script setup>
-import { ref, reactive } from "vue";
+import { ref, reactive, watch } from "vue";
 import { submitForm } from "../services/form";
 
 const formSubmitted = ref(false);
@@ -56,6 +56,10 @@ const formData = reactive({
   name: "",
   number: "",
   email: "",
+});
+
+watch(formData, () => {
+  formData.number = formData.number.replace(/[^\d+()]/g, "");
 });
 
 const post = async () => {
