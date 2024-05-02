@@ -8,7 +8,7 @@
 
   >
     <swiper-slide class="swiper__img" v-for="index in 22" :key="index"
-      ><img class="img" :src="`/img/${index}.jpeg`" alt="" loading="lazy"
+      ><img class="img" :src="`/img/${index}.jpeg`" alt=""
     /></swiper-slide>
   </swiper>
 </template>
