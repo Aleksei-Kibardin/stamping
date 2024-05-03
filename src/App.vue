@@ -242,8 +242,7 @@ main {
   height: 100vh;
 }
 .about{
-  background-image: url(/src/assets/eng.png);
-  filter: brightness(140%);
+  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://www.abmi.be/images/cont/dessintechnique-webformat-hq_imageorigi.jpg);
   background-size: cover;
 }
 .fixed-form {
