@@ -93,9 +93,9 @@
   position: relative;
   z-index: 1;
   @include fluid("margin-top", 120);
-  height: 80vh;
   color: #ffffff;
   display: flex;
+  align-self: center;
   flex-direction: column;
   align-items: center;
 }
