@@ -373,5 +373,8 @@ main {
     width: 100%;
     transform: translateX(0px);
   }
+  .swiper-button-next,.swiper-button-prev{
+    top: 65%;
+  }
 }
 </style>
