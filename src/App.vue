@@ -102,7 +102,8 @@ const anchorList = ref([
 
 const isActive = ref(false);
 
-watch(currentSection, () => { // наблюдаем за изменением currentSection (оно имеет числовое значение) и перелистываем страницу до соответсвующего слайда
+watch(currentSection, () => {
+  // наблюдаем за изменением currentSection (оно имеет числовое значение) и перелистываем страницу до соответсвующего слайда
   formActive.value = false;
   const currentSectionElement = document.querySelector(
     `[data-anchor="${currentSection.value}"]`
@@ -114,7 +115,8 @@ watch(currentSection, () => { // наблюдаем за изменением cu
   }
 });
 
-function getDeviceType() { // проверяем какое устройство использует пользователь и возвращаем результат
+function getDeviceType() {
+  // проверяем какое устройство использует пользователь и возвращаем результат
   const userAgent = navigator.userAgent.toLowerCase();
   const isMobile =
     /mobile|iphone|ipad|ipod|android|blackberry|mini|windows\sce|palm/i.test(
@@ -140,7 +142,8 @@ if (getDeviceType() === "desktop") {
 }
 
 onMounted(() => {
-  document.addEventListener("DOMContentLoaded", function () { // автоматически при обновлении страницы поднимаем пользователя на стартовый слайд
+  document.addEventListener("DOMContentLoaded", function () {
+    // автоматически при обновлении страницы поднимаем пользователя на стартовый слайд
     console.log(document.querySelector("#start"));
     document.querySelector("#start").scrollIntoView({
       behavior: "smooth",
@@ -148,7 +151,8 @@ onMounted(() => {
   });
 
   const sectionAnim = document.querySelector("main");
-  setTimeout(() => {// анимация для прелоадера
+  setTimeout(() => {
+    // анимация для прелоадера
     sectionAnim.classList.add("shift-up");
 
     setTimeout(() => {
@@ -241,8 +245,9 @@ main {
   position: relative;
   height: 100vh;
 }
-.about{
-  background-image: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), url(https://www.abmi.be/images/cont/dessintechnique-webformat-hq_imageorigi.jpg);
+.about {
+  background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
+    url(https://www.abmi.be/images/cont/dessintechnique-webformat-hq_imageorigi.jpg);
   background-size: cover;
 }
 .fixed-form {
@@ -347,19 +352,20 @@ main {
     display: flex;
   }
   .nav-border__container {
-    background: rgba(0, 0, 0, 0.3);
+    background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9));
+    box-shadow: 0 15px 10px 4px #0000006e;
     position: absolute;
-    justify-content: center;
-    align-self: center;
+    top: 40px;
     opacity: 0;
-    align-items: end;
-    @include fluid("margin-top", 125);
+    flex-direction: column;
+    align-items: center;
     width: 100%;
-    height: 10px;
+    height: 200px;
     transform: translateX(500px);
     transition: all 1s ease 0s;
     .anchor {
-      @include fluid("font-size", 20);
+      text-shadow: 1px 1px #000000;
+      @include fluid("font-size", 30);
     }
   }
   .nav-border__container.active {
