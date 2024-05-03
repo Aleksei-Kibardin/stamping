@@ -126,7 +126,7 @@
   top: 0;
   left: 50%;
   transform: translateX(-50%);
-  height: 80%;
+  height: 77%;
   background-color: white;
   @include fluid("width", 2);
   z-index: 1;
