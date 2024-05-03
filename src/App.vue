@@ -355,7 +355,7 @@ main {
     background: linear-gradient(rgba(0, 0, 0, 0.3), rgba(0, 0, 0, 0.9));
     box-shadow: 0 15px 10px 4px #0000006e;
     position: absolute;
-    top: 40px;
+    @include fluid("top", 40);
     opacity: 0;
     flex-direction: column;
     align-items: center;
