@@ -161,16 +161,26 @@
 .line-item {
   z-index: 3;
 }
-
-@media (min-width: 200px) and (max-width: 350px) {
+@media (min-width: 451px) and (max-width: 1000px) {
+  .process {
+    @include fluid("font-size", 20);
+    height: 100%;
+  }
+  .wrap-process {
+    align-self: center;
+    @include fluid("margin-top", 150);
+    height: 80%;
+  }
+}
+@media (min-width: 200px) and (max-width: 450px) {
   .wrap-process {
     position: relative;
     padding: 20px;
-    height: 100%;
     display: flex;
     flex-direction: column;
     justify-content: center;
     align-items: center;
+    align-self: center;
   }
   .wrap-process h1 {
     @include fluid("font-size", 50);
