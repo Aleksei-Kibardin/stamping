@@ -1,10 +1,10 @@
 <template>
   <div class="title__container">
     <h1 class="title">
-      <span>Первый завод</span>-Сложные штампы, простые решения.
+      <span>Первый завод-</span>Сложные штампы, простые решения.
     </h1>
     <h2 class="sub-title">
-      До 800 изделий в минуту на одной линии <br><br> От цветных металлов до дуплекса <br><br>
+      До 800 изделий в минуту на одной линии <br><br> От цветных металлов до нержавеющей стали <br><br>
       Сборка, фасовка, упаковка.
     </h2>
   </div>
@@ -48,7 +48,7 @@ setTimeout(() => {
   position: absolute;
   @include fluid("margin-left", 100);
   @include fluid("border-radius", 20);
-  width: 42%;
+  width: 47%;
   top: 30%;
   z-index: 3;
   span {
