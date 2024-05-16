@@ -247,7 +247,7 @@ main {
 }
 .about {
   background-image: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)),
-    url(https://www.abmi.be/images/cont/dessintechnique-webformat-hq_imageorigi.jpg);
+    url(./assets/2page.jpg);
   background-size: cover;
 }
 .fixed-form {

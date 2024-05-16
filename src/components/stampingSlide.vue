@@ -104,7 +104,7 @@ const contentList = [
   height: 100%;
   background: #000;
   background-image: linear-gradient(#000000b3, #000000b3),
-    url(https://1zd.netlify.app/assets/Stamping-header-LdjVYYQr.jpg);
+    url(../assets/3page.jpg);
   background-size: cover;
 }
 .wrap-content {
