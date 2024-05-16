@@ -164,6 +164,8 @@ onMounted(() => {
 </script>
 
 <style lang="scss">
+@import "swiper/scss";
+@import "swiper/scss/navigation";
 @import "./fluid.sass";
 * {
   font-family: "Roboto";
@@ -373,7 +375,8 @@ main {
     width: 100%;
     transform: translateX(0px);
   }
-  .swiper-button-next,.swiper-button-prev{
+  .swiper-button-next,
+  .swiper-button-prev {
     top: 65%;
   }
 }
