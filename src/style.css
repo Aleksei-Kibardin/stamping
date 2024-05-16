@@ -54,6 +54,3 @@ textarea:not([rows]) {
 h1{
   font-family: 'Roboto';
 }
-.swiper-button-prev, .swiper-button-next {
-  color: black !important;
-}
