@@ -7,7 +7,7 @@
     :loop="true"
 
   >
-    <swiper-slide class="swiper__img" v-for="index in 22" :key="index"
+    <swiper-slide class="swiper__img" v-for="index in 21" :key="index"
       ><img class="img" :src="`/img/${index}.jpeg`" alt=""
     /></swiper-slide>
   </swiper>
