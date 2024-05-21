@@ -118,7 +118,7 @@
   @include fluid("padding-bottom", 20);
 }
 .process {
-  width: 80%;
+  width: 92%;
   display: grid;
   @include fluid("font-size", 17);
   grid-template-areas:
@@ -208,7 +208,7 @@
     display: flex;
     gap: 20px;
     flex-direction: column;
-    @include fluid("font-size", 25);
+    @include fluid("font-size", 20);
   }
   .process h2 {
     @include fluid("font-size", 30);
