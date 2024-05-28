@@ -30,7 +30,7 @@ $mail->addAddress('kibardin20000@gmail.com');     // Кому будет ухо�
 //$mail->addAttachment('/tmp/image.jpg', 'new.jpg');    // Optional name
 $mail->isHTML(true);                   
 
-$mail->Subject = 'Заявка с тестового сайта';
+$mail->Subject = 'Заявка с Первого завода';
 $mail->Body    = '' .$name . ' оставил заявку, его телефон ' .$phone. '<br>Почта этого пользователя: ' .$email;
 $mail->AltBody = '';
 
