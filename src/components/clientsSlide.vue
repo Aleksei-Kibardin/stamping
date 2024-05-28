@@ -120,7 +120,7 @@
 .process {
   width: 92%;
   display: grid;
-  @include fluid("font-size", 17);
+  @include fluid("font-size", 14);
   grid-template-areas:
     "a a a m . . ."
     ". . . m b b b"
