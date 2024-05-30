@@ -1,8 +1,4 @@
 <template>
-  <marquee class="marquee" behavior="scroll" direction="left"
-    >«Бесшовное» производство, Инженерное сопровождение, Работаем с любыми
-    видами металла</marquee
-  >
   <div class="container">
     <div class="content">
       <h1 class="title">

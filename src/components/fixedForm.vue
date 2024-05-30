@@ -13,7 +13,7 @@
             name="name"
             required
           />
-          <label for="name" class="form__label">Имя</label>
+          <label for="name" class="form__label">Ваше имя</label>
         </div>
         <div class="form__group field">
           <input
@@ -24,18 +24,20 @@
             placeholder="Name"
             required
           />
-          <label for="name" class="form__label">Почта</label>
+          <label for="name" class="form__label">Ваша почта</label>
         </div>
         <div class="form__group field">
           <input
             v-model="formData.number"
             type="text"
-            name="number"
+            name="phone"
+            id="phone"
+            placeholder="Номер телефона"
             class="form__field"
-            placeholder="Name"
-            required
+            ref="phoneInput"
+            @focus="applyMask"
           />
-          <label for="name" class="form__label">Номер телефона (с кодом)</label>
+          <label for="name" class="form__label">Ваш номер телефона</label>
         </div>
       </div>
       <div @click="post()" class="bot-send-mail">ОБСУДИТЬ ПРОЕКТ</div>
@@ -49,7 +51,9 @@
 <script setup>
 import { ref, reactive, watch } from "vue";
 import { submitForm } from "../services/form";
+import IMask from "imask";
 
+const phoneInput = ref(null);
 const formSubmitted = ref(false);
 const message = ref("");
 const formData = reactive({
@@ -63,7 +67,17 @@ watch(formData, () => {
 });
 
 const post = async () => {
+  console.log(phoneInput.value);
   await submitForm(formData, formSubmitted, message);
+};
+
+const applyMask = () => {
+  if (phoneInput.value && !phoneInput.value.maskRef) {
+    phoneInput.value.maskRef = IMask(phoneInput.value, {
+      mask: "+7(000)000-00-00",
+      lazy: false,
+    });
+  }
 };
 </script>
 
