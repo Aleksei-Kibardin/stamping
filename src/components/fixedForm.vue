@@ -1,6 +1,6 @@
 <template>
   <div class="form__container">
-    <form class="obratnuj-zvonok" v-if="!formSubmitted">
+    <form class="obratnuj-zvonok">
       <input type="hidden" name="form-name" value="name_of_my_form" />
 
       <div class="form-zvonok">
@@ -35,7 +35,8 @@
             placeholder="Номер телефона"
             class="form__field"
             ref="phoneInput"
-            @focus="applyMask"
+            @click="checkInput"
+            @input="checkInput"
           />
           <label for="name" class="form__label">Ваш номер телефона</label>
         </div>
@@ -54,6 +55,7 @@ import { submitForm } from "../services/form";
 import IMask from "imask";
 
 const phoneInput = ref(null);
+let maskInstance = null;
 const formSubmitted = ref(false);
 const message = ref("");
 const formData = reactive({
@@ -71,12 +73,22 @@ const post = async () => {
   await submitForm(formData, formSubmitted, message);
 };
 
-const applyMask = () => {
-  if (phoneInput.value && !phoneInput.value.maskRef) {
-    phoneInput.value.maskRef = IMask(phoneInput.value, {
-      mask: "+7(000)000-00-00",
-      lazy: false,
-    });
+const checkInput = () => {
+  console.log(formData.number);
+  if (formData.number === "") {
+    if (phoneInput.value && !maskInstance) {
+      maskInstance = IMask(phoneInput.value, {
+        mask: "+7(000)000-00-00",
+        lazy: false,
+      });
+    }
+  }
+  if (formData.number === "+7)" || formData.number === "+7()") {
+    console.log("hi");
+    maskInstance.destroy();
+    maskInstance = null;
+    phoneInput.value = null;
+    formData.number = "";
   }
 };
 </script>

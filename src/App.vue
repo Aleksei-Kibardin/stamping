@@ -250,7 +250,10 @@ main {
 .about {
   background-image: linear-gradient(rgba(0, 0, 0, 9%), rgba(0, 0, 0, 9%)),
     url(./assets/2page.jpg);
-  background-size: cover;
+    background-attachment: fixed;
+    background-position: center center;
+    background-repeat: no-repeat;
+    background-size: cover;
 }
 .fixed-form {
   z-index: 100;

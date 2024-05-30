@@ -1,45 +1,38 @@
 <template>
   <div class="swiper__container">
-    <swiper
-      :modules="modules"
-      :slides-per-view="1"
-      navigation
-      :pagination="{ clickable: true }"
-      :scrollbar="{ draggable: true }"
-    >
-      <swiper-slide v-for="t in contentList" :key="t">
-        <div class="wrap-content">
-          <div class="content">
-            <div class="txt">
-              <h1 class="text-xl">
-                {{ t.title }}
-              </h1>
-              <p class="fz16">
-                {{ t.txt }}
-              </p>
-            </div>
-            <img :src="`/img/${t.url}.jpeg`" alt="" />
+    <div class="wrap-content">
+      <div class="content">
+        <div class="tab-container">
+          <div class="tab--list">
             <div
-              :style="{ 'background-image': `url(/img/${t.url}.jpeg)` }"
-              class="bg"
-            ></div>
+              class="tab-btn"
+              v-for="t in contentList"
+              :key="t"
+              :class="{ activeTab: currentTab.title === t.title }"
+              @click="currentTab = t"
+            >
+              {{ t.title }}
+              <div class="ancor-line"></div>
+            </div>
           </div>
         </div>
-      </swiper-slide>
-    </swiper>
+        <img :src="`/img/${currentTab.url}.jpeg`" alt="" />
+        <div
+          :style="{ 'background-image': `url(/img/${currentTab.url}.jpeg)` }"
+          class="bg"
+        ></div>
+      </div>
+      <div class="current-desc">
+        <h4>О услуге:</h4>
+        <p>{{ currentTab.txt }}</p>
+      </div>
+    </div>
   </div>
 </template>
 
 <script setup>
-import { Navigation, Pagination, Scrollbar, A11y } from "swiper/modules";
-import { Swiper, SwiperSlide } from "swiper/vue";
-// Import Swiper styles
-import "swiper/css";
-import "swiper/css/navigation";
-import "swiper/css/pagination";
-import "swiper/css/scrollbar";
+import { ref } from "vue";
 
-const modules = [Navigation, Pagination, Scrollbar, A11y];
 const contentList = [
   {
     title: "Автоматизированные линии листовой холодной штамповки ",
@@ -83,7 +76,8 @@ const contentList = [
     url: "157407547_xl_normal_none",
   },
   {
-    title: "Планово-экономическое обоснование запуска производственного процесса для новых изделий ",
+    title:
+      "Планово-экономическое обоснование запуска производственного процесса для новых изделий ",
     txt: "Стоимость готовых изделий при равном объеме материалов может отличаться. Это зависит от выбранного метода производства, объема партии и других факторов. Для малых партий продукции нет смысла в изготовлении дорогостоящей, сложной оснастки. Для быстрого запуска и начала производства рекомендуются ручные методы штамповки. Стоимость оснастки в этом случае будет нулевой, что оптимизирует расходы. Для крупносерийного производства обосновано строительство нескольких комплектов рабочей оснастки. ",
     url: "50690842_xl_normal_none",
   },
@@ -94,11 +88,13 @@ const contentList = [
     url: "80331336_xl_normal_none",
   },
 ];
+const currentTab = ref(contentList[0]);
 </script>
 
 <style lang="scss" scoped>
 @import "../fluid.sass";
 .swiper__container {
+  position: relative;
   display: flex;
   align-items: center;
   height: 100%;
@@ -110,20 +106,10 @@ const contentList = [
 .wrap-content {
   position: relative;
   display: flex;
-  align-items: center;
+  flex-direction: column;
+  padding-top: 85px;
   width: 100vw;
   height: 100vh;
-}
-.video {
-  position: absolute;
-  height: 100vh;
-  width: 100vw;
-  z-index: 1;
-  object-fit: cover;
-  filter: brightness(70%);
-}
-.swiper-button-next {
-  margin-top: -100px !important;
 }
 .content {
   background: rgba(31, 31, 31, 0.596);
@@ -142,24 +128,6 @@ const contentList = [
 }
 .bg {
   display: none;
-}
-.text-xl {
-  @include fluid("margin-bottom", 20);
-  @include fluid("font-size", 26);
-  color: rgb(250, 121, 15);
-  font-weight: 600;
-}
-.txt {
-  z-index: 2;
-  @include fluid("margin-left", 150);
-  .fz16 {
-    @include fluid("font-size", 16);
-  }
-
-  p {
-    @include fluid("margin-top", 30);
-    @include fluid("font-size", 24);
-  }
 }
 @media (min-width: 200px) and (max-width: 461px) {
   .txt {
@@ -199,5 +167,45 @@ const contentList = [
       font-weight: bold;
     }
   }
+}
+.current-desc {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  flex-direction: column;
+  height: 100%;
+  @include fluid("font-size", 18);
+  @include fluid("padding", 20);
+  @include fluid("bottom", 70);
+  @include fluid("gap", 20);
+  background: #2e2e2e6c;
+  color: #fff;
+}
+.tab--list {
+  display: flex;
+  flex-wrap: wrap;
+  @include fluid("gap", 20);
+  position: relative;
+  @include fluid("margin-top", 50);
+}
+.tab-btn {
+  text-align: left;
+  @include fluid("font-size", 18);
+  @include fluid("width", 400);
+  cursor: pointer;
+  transition: all 0.2s ease 0.01s;
+  border-left: 3px #ffd400 solid;
+  padding-left: 10px;
+}
+.activeTab {
+  color: #ffd400;
+  font-weight: 500;
+  .ancor-line {
+    opacity: 1;
+    width: 100%;
+  }
+}
+.tab-btn:hover {
+  color: #ffd400;
 }
 </style>
