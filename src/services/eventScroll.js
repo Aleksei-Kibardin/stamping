@@ -50,6 +50,31 @@ if (isMobileDevice()) {
     false
   );
 } else {
+  window.addEventListener(
+    "mousedown",
+    function (event) {
+      startY = event.clientY;
+      startX = event.clientX;
+    },
+    false
+  );
+  
+  window.addEventListener(
+    "mouseup",
+    function (event) {
+      let endY = event.clientY; // Получаем координаты окончания движения мыши
+      let deltaY = endY - startY; // Рассчитываем разницу между начальной и конечной координатами
+      const absDeltaY = Math.abs(deltaY);
+  
+      // Если разница больше по Y, чем по X, разрешаем скролл, иначе запрещаем
+      allowScroll = absDeltaY > Math.abs(event.clientX - startX);
+  
+      if (allowScroll) {
+        scrollByEvent(deltaY > 0 ? -1 : 1);
+      }
+    },
+    false
+  );
   window.addEventListener("wheel", (event) => {
     const currentTime = new Date().getTime();
     if (currentTime - lastScrollTime >= delay) {
