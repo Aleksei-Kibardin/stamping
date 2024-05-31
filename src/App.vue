@@ -248,7 +248,7 @@ main {
   height: 100vh;
 }
 .about {
-  background-image: linear-gradient(rgba(0, 0, 0, 9%), rgba(0, 0, 0, 9%)),
+  background-image: linear-gradient(rgba(0, 0, 0, 0.397), rgba(0, 0, 0, 0.363)),
     url(./assets/2page.jpg);
     background-attachment: fixed;
     background-position: center center;
