@@ -170,6 +170,10 @@ onMounted(() => {
 * {
   font-family: "Roboto";
 }
+#start {
+  display: flex;
+  justify-content: center;
+}
 nav {
   position: fixed;
   display: flex;
@@ -250,10 +254,10 @@ main {
 .about {
   background-image: linear-gradient(rgba(0, 0, 0, 0.397), rgba(0, 0, 0, 0.363)),
     url(./assets/2page.jpg);
-    background-attachment: fixed;
-    background-position: center center;
-    background-repeat: no-repeat;
-    background-size: cover;
+  background-attachment: fixed;
+  background-position: center center;
+  background-repeat: no-repeat;
+  background-size: cover;
 }
 .fixed-form {
   z-index: 100;
@@ -383,6 +387,4 @@ main {
     top: 65%;
   }
 }
-
-
 </style>

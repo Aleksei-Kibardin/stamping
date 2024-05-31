@@ -2,9 +2,16 @@
   <div class="map">
     <img :src="`${url}`" alt="" />
     <div class="ml">
+      <div class="about-footer">
+        <span>Первый завод это: </span> Филиал Соржинского инструментального
+        завода, занимающийся автоматической листовой и ручной объемной
+        штамповке.
+      </div>
       <h4>Первый завод © 2024</h4>
       <p>Адрес производства: г. Санкт-Петербург, Лиговский пр-т, 52К</p>
-      <p>Телефон: <a class="phone" href="tel:+79019714664"> +7-901-971-46-64</a></p>
+      <p>
+        Телефон: <a class="phone" href="tel:+79019714664"> +7-901-971-46-64</a>
+      </p>
       <p>Электронная почта: spb9714664@yandex.ru</p>
     </div>
   </div>
@@ -17,6 +24,13 @@ const url =
 
 <style scoped lang="scss">
 @import "../fluid.sass";
+.about-footer {
+  @include fluid("width", 500);
+  margin-bottom: 5%;
+}
+.about-footer span{
+  font-weight: 900;
+}
 .map {
   display: flex;
   align-items: center;
@@ -35,7 +49,7 @@ const url =
   p {
     @include fluid("margin-top", 10);
   }
-  h4{
+  h4 {
     @include fluid("font-size", 18);
   }
 }

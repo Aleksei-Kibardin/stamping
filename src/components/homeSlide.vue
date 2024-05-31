@@ -4,8 +4,11 @@
       <span>Первый завод-</span>Сложные штампы, простые решения.
     </h1>
     <h2 class="sub-title">
-      До 800 изделий в минуту на одной линии <br><br> От цветных металлов до нержавеющей стали <br><br>
-      Сборка, фасовка, упаковка.
+      <span>
+        До 800 изделий в минуту на одной линии <br /><br />
+        От цветных металлов до нержавеющей стали <br /><br />
+        Сборка, фасовка, упаковка.
+      </span>
     </h2>
   </div>
 
@@ -41,15 +44,15 @@ setTimeout(() => {
 }
 .title__container {
   padding: 10px;
-  background: #2e2e2e6c;
+
   display: flex;
+  text-align: center;
   flex-direction: column;
   align-items: center;
   position: absolute;
   @include fluid("margin-left", 100);
   @include fluid("border-radius", 20);
-  width: 47%;
-  top: 30%;
+  width: 50%;
   z-index: 3;
   span {
     color: #fff;
@@ -63,11 +66,15 @@ setTimeout(() => {
 }
 .title {
   color: #ffd400;
+  font-weight: 800;
   @include fontFluid("font-size", 80);
+  text-shadow: 2px 1px #000000;
 }
 .sub-title {
   @include fluid("margin-top", 40);
   color: #ffd400;
+  font-weight: 500;
+  text-shadow: 2px 1px #000000;
   @include fontFluid("font-size", 40);
 }
 .videoOpacity {
