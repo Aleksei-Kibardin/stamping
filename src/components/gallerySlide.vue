@@ -115,7 +115,7 @@
 }
 .row {
   justify-content: center;
-  gap: 20px;
+  @include fluid("gap", 20);
   z-index: 10;
   display: flex;
   flex-wrap: wrap;

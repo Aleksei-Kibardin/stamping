@@ -49,9 +49,6 @@ const url =
   p {
     @include fluid("margin-top", 10);
   }
-  h4 {
-    @include fluid("font-size", 18);
-  }
 }
 @media (min-width: 200px) and (max-width: 600px) {
   .map {
