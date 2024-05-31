@@ -93,7 +93,7 @@ const anchorList = ref([
     name: "Продукция",
   },
   {
-    name: "Этапы работы",
+    name: "Видео",
   },
   {
     name: "Контакты",
