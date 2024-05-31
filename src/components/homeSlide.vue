@@ -44,7 +44,6 @@ setTimeout(() => {
 }
 .title__container {
   padding: 10px;
-
   display: flex;
   text-align: center;
   flex-direction: column;
@@ -56,12 +55,6 @@ setTimeout(() => {
   z-index: 3;
   span {
     color: #fff;
-  }
-}
-@media (min-width: 200px) and (max-width: 1000px) {
-  .title__container {
-    margin-top: -40px;
-    width: 60%;
   }
 }
 .title {
@@ -76,6 +69,18 @@ setTimeout(() => {
   font-weight: 500;
   text-shadow: 2px 1px #000000;
   @include fontFluid("font-size", 40);
+}
+@media (min-width: 200px) and (max-width: 1000px) {
+  .title__container {
+    width: 80%;
+    margin-left: 0;
+  }
+  .title{
+    @include fontFluid("font-size", 50);
+  }
+  .sub-title {
+  @include fontFluid("font-size", 30);
+}
 }
 .videoOpacity {
   opacity: 1;

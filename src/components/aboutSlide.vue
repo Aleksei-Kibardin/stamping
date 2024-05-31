@@ -54,7 +54,7 @@
   font-size: 20px;
   height: 80%;
   width: 100%;
-  gap: 50px;
+  @include fluid("gap", 50);
   top: 13%;
   .content {
     position: relative;
@@ -85,7 +85,7 @@
       li {
         @include fluid("margin-left", -15);
         @include fluid("font-size", 24);
-        span{
+        span {
           font-weight: 700;
           color: #ffd400;
         }
@@ -100,9 +100,13 @@
   align-items: center;
 }
 .title-desc {
-  width: 880px;
+  @include fluid("width", 880);
+  @include fluid("font-size", 29);
   font-weight: 700;
-  font-size: 29px;
 }
-
+@media (max-width: 350px) {
+  .title-desc {
+    @include fluid("width", 660);
+  }
+}
 </style>

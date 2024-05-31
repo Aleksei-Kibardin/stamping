@@ -71,7 +71,7 @@
   @include fluid("height", 160);
   transition: 0.5s all ease;
 }
-.img-wrap{
+.img-wrap {
   overflow: hidden;
   @include fluid("width", 160);
   @include fluid("height", 160);
@@ -96,12 +96,15 @@
   }
 }
 @media (max-width: 991px) {
-  .img {
-    width: 30%;
-  }
   .wrap--gallery {
+    align-items: center;
+    justify-content: center;
+    height: 100%;
     .row {
-      justify-content: center;
+      width: 80%;
+      height: 100%;
+      align-items: center;
+      justify-content: space-between;
     }
   }
 }

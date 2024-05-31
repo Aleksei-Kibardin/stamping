@@ -173,6 +173,7 @@ onMounted(() => {
 #start {
   display: flex;
   justify-content: center;
+  align-items: center;
 }
 nav {
   position: fixed;

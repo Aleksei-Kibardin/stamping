@@ -17,10 +17,6 @@
           </div>
         </div>
         <img :src="`/img/${currentTab.url}.jpeg`" alt="" />
-        <div
-          :style="{ 'background-image': `url(/img/${currentTab.url}.jpeg)` }"
-          class="bg"
-        ></div>
       </div>
       <div class="current-desc">
         <h4>О услуге:</h4>
@@ -129,45 +125,6 @@ const currentTab = ref(contentList[0]);
 .bg {
   display: none;
 }
-@media (min-width: 200px) and (max-width: 461px) {
-  .txt {
-    z-index: 2;
-    @include fluid("margin-left", 50);
-  }
-}
-@media (min-width: 200px) and (max-width: 600px) {
-  .content {
-    height: 40%;
-    max-height: none;
-    .txt {
-      margin: 0;
-      padding: 40px;
-    }
-    img {
-      @include fluid("margin-left", 20);
-      @include fluid("max-width", 500);
-      display: none;
-    }
-    .bg {
-      filter: brightness(50%);
-      position: absolute;
-      display: block;
-      width: 100%;
-      height: 100%;
-      background-size: cover;
-    }
-    .text-xl {
-      @include fluid("font-size", 40);
-      color: rgb(250, 121, 15);
-      font-weight: bold;
-    }
-    .fz16 {
-      @include fluid("font-size", 27);
-      color: #fff;
-      font-weight: bold;
-    }
-  }
-}
 .current-desc {
   display: flex;
   align-items: flex-start;
@@ -176,7 +133,6 @@ const currentTab = ref(contentList[0]);
   height: 100%;
   @include fluid("font-size", 18);
   @include fluid("padding", 20);
-  @include fluid("bottom", 70);
   @include fluid("gap", 20);
   background: #2e2e2e6c;
   color: #fff;
@@ -207,5 +163,44 @@ const currentTab = ref(contentList[0]);
 }
 .tab-btn:hover {
   color: #ffd400;
+}
+@media (min-width: 200px) and (max-width: 461px) {
+  .txt {
+    z-index: 2;
+    @include fluid("margin-left", 50);
+  }
+  .current-desc {
+    @include fluid("padding-top", 150);
+    justify-content: flex-start;
+  }
+}
+@media (min-width: 200px) and (max-width: 600px) {
+  .content {
+    flex-direction: column;
+    @include fluid("gap", 70);
+    max-height: none;
+    .txt {
+      margin: 0;
+      padding: 40px;
+    }
+    img {
+      @include fluid("margin-left", 20);
+      @include fluid("max-width", 500);
+    }
+    .text-xl {
+      @include fluid("font-size", 40);
+      color: rgb(250, 121, 15);
+      font-weight: bold;
+    }
+    .fz16 {
+      @include fluid("font-size", 27);
+      color: #fff;
+      font-weight: bold;
+    }
+  }
+  .current-desc {
+    @include fluid("padding-top", 150);
+    justify-content: flex-start;
+  }
 }
 </style>

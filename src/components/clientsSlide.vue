@@ -8,16 +8,16 @@
         <div class="video">
           <iframe
             class="video-item"
-            src="https://www.youtube.com/embed/hWZlfi39AX4?si=Qj4uk8sq0CJePqoj"
+            src="https://www.youtube.com/embed/hWZlfi39AX4?autoplay=0&controls=0&modestbranding=1&showinfo=0&mute=1&loop=1&playlist=hWZlfi39AX4"
             title="YouTube video player"
             frameborder="0"
-            controls=0
-            modestbranding=0
-            mute=0
-            autoplay=0
-            loop=1
-            showinfo=0
-            disablekb=1
+            controls="0"
+            modestbranding="0"
+            mute="0"
+            autoplay="0"
+            loop="1"
+            showinfo="0"
+            disablekb="1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
@@ -26,16 +26,16 @@
         <div class="video">
           <iframe
             class="video-item"
-            src="https://www.youtube.com/embed/hWZlfi39AX4?si=Qj4uk8sq0CJePqoj"
+            src="https://www.youtube.com/embed/hWZlfi39AX4?autoplay=0&controls=0&modestbranding=1&showinfo=0&mute=1&loop=1&playlist=hWZlfi39AX4"
             title="YouTube video player"
             frameborder="0"
-            controls=0
-            modestbranding=0
-            mute=0
-            autoplay=0
-            loop=1
-            showinfo=0
-            disablekb=1
+            controls="0"
+            modestbranding="0"
+            mute="0"
+            autoplay="0"
+            loop="1"
+            showinfo="0"
+            disablekb="1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
@@ -44,16 +44,16 @@
         <div class="video">
           <iframe
             class="video-item"
-            src="https://www.youtube.com/embed/hWZlfi39AX4?si=Qj4uk8sq0CJePqoj"
+            src="https://www.youtube.com/embed/hWZlfi39AX4?autoplay=0&controls=0&modestbranding=1&showinfo=0&mute=1&loop=1&playlist=hWZlfi39AX4"
             title="YouTube video player"
             frameborder="0"
-            controls=0
-            modestbranding=0
-            mute=0
-            autoplay=0
-            loop=1
-            showinfo=0
-            disablekb=1
+            controls="0"
+            modestbranding="0"
+            mute="0"
+            autoplay="0"
+            loop="1"
+            showinfo="0"
+            disablekb="1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
@@ -62,16 +62,16 @@
         <div class="video">
           <iframe
             class="video-item"
-            src="https://www.youtube.com/embed/hWZlfi39AX4?si=Qj4uk8sq0CJePqoj"
+            src="https://www.youtube.com/embed/hWZlfi39AX4?autoplay=0&controls=0&modestbranding=1&showinfo=0&mute=1&loop=1&playlist=hWZlfi39AX4"
             title="YouTube video player"
             frameborder="0"
-            controls=0
-            modestbranding=0
-            mute=0
-            autoplay=0
-            loop=1
-            showinfo=0
-            disablekb=1
+            controls="0"
+            modestbranding="0"
+            mute="0"
+            autoplay="0"
+            loop="1"
+            showinfo="0"
+            disablekb="1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
@@ -80,16 +80,16 @@
         <div class="video">
           <iframe
             class="video-item"
-            src="https://www.youtube.com/embed/hWZlfi39AX4?si=Qj4uk8sq0CJePqoj"
+            src="https://www.youtube.com/embed/hWZlfi39AX4?autoplay=0&controls=0&modestbranding=1&showinfo=0&mute=1&loop=1&playlist=hWZlfi39AX4"
             title="YouTube video player"
             frameborder="0"
-            controls=0
-            modestbranding=0
-            mute=0
-            autoplay=0
-            loop=1
-            showinfo=0
-            disablekb=1
+            controls="0"
+            modestbranding="0"
+            mute="0"
+            autoplay="0"
+            loop="1"
+            showinfo="0"
+            disablekb="1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
@@ -98,16 +98,16 @@
         <div class="video">
           <iframe
             class="video-item"
-            src="https://www.youtube.com/embed/hWZlfi39AX4?si=Qj4uk8sq0CJePqoj"
+            src="https://www.youtube.com/embed/hWZlfi39AX4?autoplay=0&controls=0&modestbranding=1&showinfo=0&mute=1&loop=1&playlist=hWZlfi39AX4"
             title="YouTube video player"
             frameborder="0"
-            controls=0
-            modestbranding=0
-            mute=0
-            autoplay=0
-            loop=1
-            showinfo=0
-            disablekb=1
+            controls="0"
+            modestbranding="0"
+            mute="0"
+            autoplay="0"
+            loop="1"
+            showinfo="0"
+            disablekb="1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
@@ -115,12 +115,7 @@
         </div>
       </div>
     </div>
-    <video
-      class="video1"
-      autoplay
-      muted
-      loop
-    >
+    <video class="video1" autoplay muted loop>
       <source src="../assets/video.mp4" type="video/mp4" />
       Your browser does not support HTML5 video.
     </video>
@@ -188,5 +183,16 @@
   display: flex;
   width: 100vw;
   height: 100vh;
+}
+@media (min-width: 200px) and (max-width: 1000px) {
+  .cards--title {
+    text-align: center;
+  }
+}
+@media (min-width: 200px) and (max-width: 480px) {
+  .video-item {
+    @include fluid("width", 350);
+    @include fluid("height", 165);
+  }
 }
 </style>
