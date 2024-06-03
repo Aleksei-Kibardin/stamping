@@ -7,17 +7,11 @@
       <div class="videos">
         <div class="video">
           <iframe
-            class="video-item"
-            src="https://www.youtube.com/embed/hWZlfi39AX4?autoplay=0&controls=0&modestbranding=1&showinfo=0&mute=1&loop=1&playlist=hWZlfi39AX4"
+            width="560"
+            height="315"
+            src="https://www.youtube.com/embed/mUaI-5ntmSU?si=qKZyZbya6DrjYdHC"
             title="YouTube video player"
             frameborder="0"
-            controls="0"
-            modestbranding="0"
-            mute="0"
-            autoplay="0"
-            loop="1"
-            showinfo="0"
-            disablekb="1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
@@ -25,17 +19,11 @@
         </div>
         <div class="video">
           <iframe
-            class="video-item"
-            src="https://www.youtube.com/embed/hWZlfi39AX4?autoplay=0&controls=0&modestbranding=1&showinfo=0&mute=1&loop=1&playlist=hWZlfi39AX4"
+            width="560"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/NpyWqxIyPUY?si=kNfDNrOB91B_8oSg&amp;controls=0"
             title="YouTube video player"
             frameborder="0"
-            controls="0"
-            modestbranding="0"
-            mute="0"
-            autoplay="0"
-            loop="1"
-            showinfo="0"
-            disablekb="1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
@@ -43,17 +31,11 @@
         </div>
         <div class="video">
           <iframe
-            class="video-item"
-            src="https://www.youtube.com/embed/hWZlfi39AX4?autoplay=0&controls=0&modestbranding=1&showinfo=0&mute=1&loop=1&playlist=hWZlfi39AX4"
+            width="560"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/UyymQuUUSNs?si=7WY4uVBAItOwRKQ0&amp;controls=0"
             title="YouTube video player"
             frameborder="0"
-            controls="0"
-            modestbranding="0"
-            mute="0"
-            autoplay="0"
-            loop="1"
-            showinfo="0"
-            disablekb="1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
@@ -61,17 +43,11 @@
         </div>
         <div class="video">
           <iframe
-            class="video-item"
-            src="https://www.youtube.com/embed/hWZlfi39AX4?autoplay=0&controls=0&modestbranding=1&showinfo=0&mute=1&loop=1&playlist=hWZlfi39AX4"
+            width="560"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/mNmg-HxY4qU?si=64hgvu1sWttffH1n&amp;controls=0"
             title="YouTube video player"
             frameborder="0"
-            controls="0"
-            modestbranding="0"
-            mute="0"
-            autoplay="0"
-            loop="1"
-            showinfo="0"
-            disablekb="1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
@@ -79,36 +55,12 @@
         </div>
         <div class="video">
           <iframe
-            class="video-item"
-            src="https://www.youtube.com/embed/hWZlfi39AX4?autoplay=0&controls=0&modestbranding=1&showinfo=0&mute=1&loop=1&playlist=hWZlfi39AX4"
+            width="560"
+            height="315"
+            src="https://www.youtube-nocookie.com/embed/RfsqNKvpOZM?si=TQLTb7Wk5fmVRoKN&amp;controls=0"
             title="YouTube video player"
             frameborder="0"
-            controls="0"
-            modestbranding="0"
-            mute="0"
-            autoplay="0"
-            loop="1"
-            showinfo="0"
-            disablekb="1"
             allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share"
-            referrerpolicy="strict-origin-when-cross-origin"
-            allowfullscreen
-          ></iframe>
-        </div>
-        <div class="video">
-          <iframe
-            class="video-item"
-            src="https://www.youtube.com/embed/hWZlfi39AX4?autoplay=0&controls=0&modestbranding=1&showinfo=0&mute=1&loop=1&playlist=hWZlfi39AX4"
-            title="YouTube video player"
-            frameborder="0"
-            controls="0"
-            modestbranding="0"
-            mute="0"
-            autoplay="0"
-            loop="1"
-            showinfo="0"
-            disablekb="1"
-            allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
             referrerpolicy="strict-origin-when-cross-origin"
             allowfullscreen
           ></iframe>
