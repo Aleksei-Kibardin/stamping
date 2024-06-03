@@ -79,7 +79,7 @@
     }
     .list {
       @include fluid("margin-top", 50);
-      @include fluid("width", 1000);
+      
       h2 {
         @include fluid("font-size", 30);
       }

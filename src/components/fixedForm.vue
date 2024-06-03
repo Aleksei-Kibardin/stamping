@@ -1,6 +1,7 @@
 <template>
   <div class="form__container">
     <form class="obratnuj-zvonok">
+      <div class="close__btn" @click="closeForm"></div>
       <input type="hidden" name="form-name" value="name_of_my_form" />
 
       <div class="form-zvonok">
@@ -53,6 +54,7 @@
 import { ref, reactive, watch } from "vue";
 import { submitForm } from "../services/form";
 import IMask from "imask";
+import { defineEmits } from "vue";
 
 const phoneInput = ref(null);
 let maskInstance = null;
@@ -63,6 +65,12 @@ const formData = reactive({
   number: "",
   email: "",
 });
+
+const emit = defineEmits(["close-form"]);
+
+const closeForm = () => {
+  emit("close-form");
+};
 
 watch(formData, () => {
   formData.number = formData.number.replace(/[^\d+()]/g, "");
@@ -105,7 +113,7 @@ const checkInput = () => {
 }
 
 .obratnuj-zvonok {
-  position: absolute;
+  position: relative;
   bottom: 0px;
   right: 0px;
   box-shadow: 0 0 20px 0.5px #5858589d;
@@ -208,4 +216,30 @@ const checkInput = () => {
   padding: 10px;
   background-color: chartreuse;
 }
+.close__btn {
+  cursor: pointer;
+  position: absolute;
+  top: 20px;
+  left: 20px;
+  transition: all 0.3s ease 0s;
+}
+.close__btn::before,
+.close__btn::after {
+  content: "";
+  display: block;
+  background-color: #000;
+  height: 2px;
+  @include fluid("width", 30);
+  transition: all 0.3s ease 0s;
+}
+.close__btn::before {
+  position: relative;
+  transform: rotate(45deg);
+  @include fluid("top", 2);
+}
+.close__btn::after {
+  position: relative;
+  transform: rotate(-45deg);
+}
+
 </style>

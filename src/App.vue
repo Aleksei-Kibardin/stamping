@@ -60,7 +60,7 @@
     </main>
 
     <div class="fixed-form" :class="{ show: formActive }">
-      <fixed-form></fixed-form>
+      <fixed-form @close-form="closeForm"></fixed-form>
     </div>
   </div>
 </template>
@@ -102,6 +102,10 @@ const anchorList = ref([
 
 const isActive = ref(false);
 
+const closeForm = () => {
+  formActive.value = false;
+};
+
 watch(currentSection, () => {
   // наблюдаем за изменением currentSection (оно имеет числовое значение) и перелистываем страницу до соответсвующего слайда
   formActive.value = false;
@@ -133,7 +137,7 @@ function getDeviceType() {
 console.log(getDeviceType()); // если пользователь использует desktop тогда на втором слайде автоматически показываем форму с задержкой в 500 млс
 if (getDeviceType() === "desktop") {
   watch(currentSection, () => {
-    if (currentSection.value == 1) {
+    if (currentSection.value == 1 || currentSection.value == 5 ) {
       setTimeout(() => {
         formActive.value = true;
       }, 500);
