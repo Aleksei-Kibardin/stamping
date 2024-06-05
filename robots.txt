@@ -1,0 +1,5 @@
+# Сгенерировано https://pr-cy.ru/
+
+Sitemap: https://stamping-rf.netlify.app/sitemap.xml
+User-agent: *
+Allow: https://stamping-rf.netlify.app/
