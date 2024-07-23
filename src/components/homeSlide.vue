@@ -1,13 +1,14 @@
 <template>
   <div class="title__container">
     <h1 class="title">
-      <span>Первый завод-</span>Сложные штампы, простые решения.
+      <span>Первый завод-</span>КРУПНОСЕРИЙНАЯ ШТАМПОВКА МЕТАЛЛИЧЕСКИХ ИЗДЕЛИЙ
     </h1>
     <h2 class="sub-title">
       <span>
-        До 800 изделий в минуту на одной линии <br /><br />
-        От цветных металлов до нержавеющей стали <br /><br />
-        Сборка, фасовка, упаковка.
+        ЛИСТОВАЯ АВТОМАТИЧЕСКАЯ
+        <br /><br />
+        ОБЪЁМНАЯ РУЧНАЯ ШТАМПОВКА. <br /><br />ИНЖИНИРИНГ. ИМПОРТОЗАМЕЩЕНИЕ. <br /><br />
+        СКВОЗНОЙ КОНТРОЛЬ КАЛИБРАМИ И ИЗМЕРИТЕЛЬНЫМ ИНСТРУМЕНТОМ
       </span>
     </h2>
   </div>
@@ -51,7 +52,7 @@ setTimeout(() => {
   position: absolute;
   @include fluid("margin-left", 100);
   @include fluid("border-radius", 20);
-  width: 50%;
+  width: 60%;
   z-index: 3;
   span {
     color: #fff;
@@ -60,7 +61,7 @@ setTimeout(() => {
 .title {
   color: #ffd400;
   font-weight: 800;
-  @include fontFluid("font-size", 80);
+  @include fontFluid("font-size", 50);
   text-shadow: 2px 1px #000000;
 }
 .sub-title {
@@ -75,12 +76,12 @@ setTimeout(() => {
     width: 80%;
     margin-left: 0;
   }
-  .title{
+  .title {
     @include fontFluid("font-size", 50);
   }
   .sub-title {
-  @include fontFluid("font-size", 30);
-}
+    @include fontFluid("font-size", 30);
+  }
 }
 .videoOpacity {
   opacity: 1;

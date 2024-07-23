@@ -3,7 +3,7 @@
     <img :src="`${url}`" alt="" />
     <div class="ml">
       <div class="about-footer">
-        <span>Первый завод это: </span> Филиал Соржинского инструментального
+        <span>Первый завод это: </span> Филиал <a href="">Соржинского инструментального</a>
         завода, занимающийся автоматической листовой и ручной объемной
         штамповке.
       </div>
@@ -30,6 +30,9 @@ const url =
 }
 .about-footer span{
   font-weight: 900;
+}
+a{
+  text-decoration-line: underline;
 }
 .map {
   display: flex;
